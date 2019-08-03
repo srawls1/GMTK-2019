@@ -196,7 +196,7 @@ MonoBehaviour:
   maxSpeed: 7
   timeToFullSpeed: 0.2
   timeToStop: 0.1
-  jumpHeight: 3
+  jumpHeight: 4
   variableHangTime: 0
   coyoteTime: 0.2
   inputQueueTime: 0.2
@@ -208,9 +208,8 @@ MonoBehaviour:
   deflectRadius: 1
   deflectSlowdownTime: 0.6
   deflectRecoilSpeed: 3
-  bulletPreFab: {fileID: 7782749728104595142, guid: ebc3e20a9b5e840ea95cc79b2953403b,
+  bulletPreFab: {fileID: 6249920166147536914, guid: ebc3e20a9b5e840ea95cc79b2953403b,
     type: 3}
   lineRenderer: {fileID: 0}
   timeBeforeBulletPickup: 1
-  bulletSpeed: 20
   spawnDistance: 0.5
