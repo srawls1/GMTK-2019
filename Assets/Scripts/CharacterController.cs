@@ -87,7 +87,7 @@ public class CharacterController : MonoBehaviour
 			if (projectile != null)
 			{
 				// TODO - Show particle or screen shader effect
-				Time.timeScale = 0f;
+				Time.timeScale = 1f;
 				yield return new WaitForSecondsRealtime(deflectSlowdownTime);
 				Time.timeScale = 1f;
 
