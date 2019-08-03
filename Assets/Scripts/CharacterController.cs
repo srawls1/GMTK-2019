@@ -47,7 +47,8 @@ public class CharacterController : MonoBehaviour
 	[Header("Bullet")]
 	public Transform FirePosition;
 	public GameObject bulletPreFab;
-	public LineRenderer lineRenderer; void Awake()
+	public LineRenderer lineRenderer;
+	void Awake()
 	{
 		rigidbody = GetComponent<Rigidbody2D>();
 		animator = GetComponent<Animator>();
