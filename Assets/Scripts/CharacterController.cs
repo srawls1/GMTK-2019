@@ -30,6 +30,12 @@ public class CharacterController : MonoBehaviour
 	[SerializeField] private float deflectSlowdownTime;
 	[SerializeField] private float deflectRecoilSpeed;
 
+	[Header("Bullet")]
+	[SerializeField] private PlayerBullet bulletPreFab;
+	[SerializeField] private TrackingLine laser;
+	[SerializeField] private float timeBeforeBulletPickup;
+	[SerializeField] private float spawnDistance = 0.5f;
+
 	private new Rigidbody2D rigidbody;
 	private Animator animator;
 	private new Collider2D collider;
@@ -46,10 +52,6 @@ public class CharacterController : MonoBehaviour
 		get; private set;
 	}
 
-	[Header("Bullet")]
-	public PlayerBullet bulletPreFab;
-	public LineRenderer lineRenderer;
-	public float timeBeforeBulletPickup;
 
 	void Awake()
 	{
@@ -129,8 +131,10 @@ public class CharacterController : MonoBehaviour
 	}
 	private void CheckForShoot()
 	{
+		//Debug.Log(Input.GetButton("Fire"));
 		if (hasBullet && Input.GetButtonUp("Fire"))
 		{
+			Debug.Log("Shooting");
 			Shoot();
 		}
 
@@ -270,19 +274,13 @@ public class CharacterController : MonoBehaviour
 		}
 	}
 
-	
-	public float spawnDistance = 0.5f;
 	private void Shoot()
 	{
 		hasBullet = false;
 		timeShotBullet = Time.time;
 		Vector2 start = transform.position;
-		Vector2 dest = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-		Vector2 direction = dest - start;
+		Vector2 direction = laser.direction;
 		start += direction.normalized * spawnDistance;
-
-		lineRenderer.SetPosition(0,  start);
-		lineRenderer.SetPosition(1, dest);
 		
 		float rotZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 		PlayerBullet b = Instantiate(bulletPreFab, start, Quaternion.Euler(0, 0, rotZ)) as PlayerBullet;

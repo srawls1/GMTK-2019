@@ -210,6 +210,6 @@ MonoBehaviour:
   deflectRecoilSpeed: 3
   bulletPreFab: {fileID: 6249920166147536914, guid: ebc3e20a9b5e840ea95cc79b2953403b,
     type: 3}
-  lineRenderer: {fileID: 0}
-  timeBeforeBulletPickup: 1
+  laser: {fileID: 0}
+  timeBeforeBulletPickup: 0.1
   spawnDistance: 0.5
