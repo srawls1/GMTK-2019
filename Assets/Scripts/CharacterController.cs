@@ -38,6 +38,8 @@ public class CharacterController : MonoBehaviour
 	private float jumpQueuedUntil;
 	private float lastDash;
 	private bool facingRight = true;
+	private bool hasBullet = true;
+	private float timeShotBullet;
 
 	public bool Charging
 	{
@@ -45,9 +47,11 @@ public class CharacterController : MonoBehaviour
 	}
 
 	[Header("Bullet")]
-	public Transform FirePosition;
 	public GameObject bulletPreFab;
-	public LineRenderer lineRenderer; void Awake()
+	public LineRenderer lineRenderer;
+	public float timeBeforeBulletPickup;
+
+	void Awake()
 	{
 		rigidbody = GetComponent<Rigidbody2D>();
 		animator = GetComponent<Animator>();
@@ -62,6 +66,17 @@ public class CharacterController : MonoBehaviour
 		CheckForDeflect();
 		CheckForShoot();
 		ApplyHorizontalAcceleration();
+	}
+
+	private void OnCollisionEnter2D(Collision2D collision)
+	{
+		PlayerBullet bullet = collision.collider.GetComponent<PlayerBullet>();
+		if (Time.time > timeShotBullet + timeBeforeBulletPickup && bullet != null)
+		{
+			Destroy(bullet.gameObject);
+			hasBullet = true;
+			return;
+		}
 	}
 
 	private void CheckForDeflect()
@@ -114,7 +129,7 @@ public class CharacterController : MonoBehaviour
 	}
 	private void CheckForShoot()
 	{
-		if (Input.GetButtonUp("Fire"))
+		if (hasBullet && Input.GetButtonUp("Fire"))
 		{
 			Shoot();
 		}
@@ -261,6 +276,8 @@ public class CharacterController : MonoBehaviour
 	public float spawnDistance = 0.5f;
 	private void Shoot()
 	{
+		hasBullet = false;
+		timeShotBullet = Time.time;
 		Vector2 start = transform.position;
 		Vector2 dest = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 		Vector2 direction = dest - start;
