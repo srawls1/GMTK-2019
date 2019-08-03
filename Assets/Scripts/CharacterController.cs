@@ -49,11 +49,8 @@ public class CharacterController : MonoBehaviour
 	[Header("Bullet")]
 	public GameObject bulletPreFab;
 	public LineRenderer lineRenderer;
-<<<<<<< HEAD
-=======
 	public float timeBeforeBulletPickup;
 
->>>>>>> 66bff011b7840555af54e96d77275c1d0d23141f
 	void Awake()
 	{
 		rigidbody = GetComponent<Rigidbody2D>();
