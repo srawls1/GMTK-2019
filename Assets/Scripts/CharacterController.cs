@@ -256,11 +256,18 @@ public class CharacterController : MonoBehaviour
 	}
 
 	
+	public float offset;
 	private void Shoot()
 	{
-		Instantiate(bulletPreFab, FirePosition.position, FirePosition.rotation);
 		
 		lineRenderer.SetPosition(0, FirePosition.position);
-		lineRenderer.SetPosition(1, Input.mousePosition);
+		lineRenderer.SetPosition(1, Camera.main.ScreenToWorldPoint(Input.mousePosition));
+
+		// copied this code from a YouTube tutorial
+		Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - FirePosition.position;
+		float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+		FirePosition.rotation = Quaternion.Euler(0f, 0f, rotZ + offset);
+
+		Instantiate(bulletPreFab, FirePosition.position, FirePosition.rotation);
 	}
 }
