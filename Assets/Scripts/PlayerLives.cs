@@ -1,24 +1,31 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerLives : MonoBehaviour
 {
 	[SerializeField] private int baseMaxHealth;
     [SerializeField] private Rigidbody2D rigidbody;
+    [SerializeField] private Image healthBar;
     // Start is called before the first frame update
 
-    private int current_health;
+    private float current_health;
 
     void Start()
     {
-        int current_health = baseMaxHealth;
+        float current_health = baseMaxHealth;
+        Debug.Log(current_health);
+        Debug.Log(baseMaxHealth);
         
     }
 
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(current_health); // how come this returns 0 here but it's 5 in Start? can't be scoping, right
+        Debug.Log((current_health/baseMaxHealth));
+        healthBar.fillAmount = current_health / baseMaxHealth;
         
     }
 
@@ -29,7 +36,6 @@ public class PlayerLives : MonoBehaviour
             current_health -= 1;
             Destroy(other.gameObject);
         }
-        // todo probably need to make the 
-        // decrease the health bar
+        // TODO build healthbar UI element
     }
 }
