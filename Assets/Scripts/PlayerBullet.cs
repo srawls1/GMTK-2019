@@ -36,7 +36,16 @@ public class PlayerBullet : MonoBehaviour
 	}
 
     void OnCollisionEnter2D (Collision2D col) {
-        Debug.Log("Hello");
-        Destroy(gameObject);
+		Debug.Log(col.collider.name);
+		HomingProjectile homingarrow = col.collider.GetComponent<HomingProjectile>();
+
+		if (homingarrow != null)
+		{
+			Debug.Log("Hello");
+			// find the vector of this object
+			Vector2 vel = rigidbody.velocity;
+			Debug.Log(vel);
+			homingarrow.GetDeflected(vel);
+		}
     }
 }
