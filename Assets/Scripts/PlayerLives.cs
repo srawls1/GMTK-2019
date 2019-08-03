@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerLives : MonoBehaviour
 {
-	[SerializeField] private int baseMaxHealth;
+	[SerializeField] private float baseMaxHealth;
     [SerializeField] private Rigidbody2D rigidbody;
     [SerializeField] private Image healthBar;
     // Start is called before the first frame update
