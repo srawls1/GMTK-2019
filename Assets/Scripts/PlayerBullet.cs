@@ -30,6 +30,11 @@ public class PlayerBullet : MonoBehaviour
 		{
 			Vector2 diff = objToReturnTo.transform.position - transform.position;
 			rigidbody.AddForce(diff.normalized * returnForce);
+			if (velocity.magnitude > maxSpeed)
+			{
+				velocity = velocity.normalized * maxSpeed;
+				rigidbody.velocity = velocity;
+			}
 		}
 	}
 
