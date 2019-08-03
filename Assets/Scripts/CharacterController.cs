@@ -106,7 +106,7 @@ public class CharacterController : MonoBehaviour
 
 	private void CheckForDash()
 	{
-		if (lastDash + dashCooldownTime < Time.time && Input.GetButton("Dash")) // We are not in a dash cooldown
+		if (lastDash + dashCooldownTime < Time.time && Input.GetButtonDown("Dash")) // We are not in a dash cooldown
 		{
 			Dash();
 		}
@@ -114,7 +114,7 @@ public class CharacterController : MonoBehaviour
 	}
 	private void CheckForShoot()
 	{
-		if (Input.GetButton("Fire"))
+		if (Input.GetButtonUp("Fire"))
 		{
 			Shoot();
 		}
@@ -188,7 +188,10 @@ public class CharacterController : MonoBehaviour
 			float time = input == 0f ? timeToStop : timeToFullSpeed;
 
 			velocity.x = Mathf.SmoothDamp(velocity.x, input * maxSpeed, ref acceleration, time);
-			rigidbody.velocity = velocity;
+			if (!float.IsNaN(velocity.x))
+			{
+				rigidbody.velocity = velocity;
+			}
 
 			if (velocity.x > 0.05f)
 			{
