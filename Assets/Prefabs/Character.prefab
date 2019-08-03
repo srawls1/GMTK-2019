@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 95590110671199336}
   - component: {fileID: 50371170301181444}
   - component: {fileID: 114103423078676894}
+  - component: {fileID: 1168207143033302677}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -177,3 +178,35 @@ MonoBehaviour:
   deflectRadius: 1
   deflectSlowdownTime: 0.6
   deflectRecoilSpeed: 3
+  FirePosition: {fileID: 0}
+  bulletPreFab: {fileID: 7782749728104595142, guid: ebc3e20a9b5e840ea95cc79b2953403b,
+    type: 3}
+--- !u!114 &1168207143033302677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1703181823350818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4d9e36ef7f3f2c4cbfd36635f5e3436, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 0
+  timeToFullSpeed: 0
+  timeToStop: 0
+  jumpHeight: 0
+  variableHangTime: 0
+  coyoteTime: 0
+  inputQueueTime: 0
+  dashSpeed: 0
+  dashControlLossDuration: 0
+  dashDuration: 0
+  pauseDuration: 0
+  dashCooldownTime: 0
+  deflectRadius: 0
+  deflectSlowdownTime: 0
+  deflectRecoilSpeed: 0
+  FirePosition: {fileID: 0}
+  bulletPreFab: {fileID: 0}

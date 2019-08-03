@@ -43,6 +43,11 @@ public class CharacterController : MonoBehaviour
 		get; private set;
 	}
 
+	[Header("Bullet")]
+	public Transform FirePosition;
+	public GameObject bulletPreFab;
+	public LineRenderer lineRenderer;
+
 	void Awake()
 	{
 		rigidbody = GetComponent<Rigidbody2D>();
@@ -56,6 +61,7 @@ public class CharacterController : MonoBehaviour
 		CheckForJump();
 		CheckForDash();
 		CheckForDeflect();
+		CheckForShoot();
 		ApplyHorizontalAcceleration();
 	}
 
@@ -75,6 +81,7 @@ public class CharacterController : MonoBehaviour
 			StartCoroutine(DeflectRoutine(direction));
 		}
 	}
+
 
 	private IEnumerator DeflectRoutine(Vector2 direction)
 	{
@@ -105,6 +112,14 @@ public class CharacterController : MonoBehaviour
 			Dash();
 		}
 		
+	}
+	private void CheckForShoot()
+	{
+		if (Input.GetButton("Fire"))
+		{
+			Shoot();
+		}
+
 	}
 
 	private void Dash()
@@ -237,5 +252,14 @@ public class CharacterController : MonoBehaviour
 		{
 			animator.SetBool("OnFloor", false);
 		}
+	}
+
+	
+	private void Shoot()
+	{
+		Instantiate(bulletPreFab, FirePosition.position, FirePosition.rotation);
+		
+		lineRenderer.SetPosition(0, FirePosition.position);
+		lineRenderer.SetPosition(1, Input.mousePosition);
 	}
 }
