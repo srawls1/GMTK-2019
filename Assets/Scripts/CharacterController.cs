@@ -258,20 +258,19 @@ public class CharacterController : MonoBehaviour
 
 	
 	public float bulletSpeed = 60.0f;
+	public float spawnDistance = 0.5f;
 	private void Shoot()
 	{
+		Vector2 start = transform.position;
+		Vector2 dest = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+		Vector2 direction = dest - start;
+		start += direction.normalized * spawnDistance;
+
+		lineRenderer.SetPosition(0,  start);
+		lineRenderer.SetPosition(1, dest);
 		
-		lineRenderer.SetPosition(0, FirePosition.position);
-		lineRenderer.SetPosition(1, Camera.main.ScreenToWorldPoint(Input.mousePosition));
-
-		// copied this code from a YouTube tutorial
-		Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - FirePosition.position;
-		float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-		FirePosition.rotation = Quaternion.Euler(0f, 0f, rotZ);
-
-		Vector2 direction = difference / difference.magnitude;
-
-		GameObject b = Instantiate(bulletPreFab, FirePosition.position, FirePosition.rotation) as GameObject;
+		float rotZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+		GameObject b = Instantiate(bulletPreFab, start, Quaternion.Euler(0, 0, rotZ)) as GameObject;
 		b.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
 	}
 }
