@@ -47,9 +47,7 @@ public class CharacterController : MonoBehaviour
 	[Header("Bullet")]
 	public Transform FirePosition;
 	public GameObject bulletPreFab;
-	public LineRenderer lineRenderer;
-
-	void Awake()
+	public LineRenderer lineRenderer; void Awake()
 	{
 		rigidbody = GetComponent<Rigidbody2D>();
 		animator = GetComponent<Animator>();
@@ -256,7 +254,7 @@ public class CharacterController : MonoBehaviour
 	}
 
 	
-	public float offset;
+	public float bulletSpeed = 60.0f;
 	private void Shoot()
 	{
 		
@@ -266,8 +264,11 @@ public class CharacterController : MonoBehaviour
 		// copied this code from a YouTube tutorial
 		Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - FirePosition.position;
 		float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-		FirePosition.rotation = Quaternion.Euler(0f, 0f, rotZ + offset);
+		FirePosition.rotation = Quaternion.Euler(0f, 0f, rotZ);
 
-		Instantiate(bulletPreFab, FirePosition.position, FirePosition.rotation);
+		Vector2 direction = difference / difference.magnitude;
+
+		GameObject b = Instantiate(bulletPreFab, FirePosition.position, FirePosition.rotation) as GameObject;
+		b.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
 	}
 }

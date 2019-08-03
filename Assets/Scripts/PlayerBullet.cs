@@ -27,8 +27,6 @@ public class PlayerBullet : MonoBehaviour
 	void Update()
 	{
 		/* TODO i want this to shoot out in the direction of the mouse cursor */
-		Vector2 force = new Vector2(15.0f, 0.0f);
-		rigidbody.AddForce(force);
 		/*
 		if (rigidbody.velocity.magnitude > currentMaxSpeed)
 		{
