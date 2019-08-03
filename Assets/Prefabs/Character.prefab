@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1716619851
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1716619852}
+  m_Layer: 0
+  m_Name: FirePosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1716619852
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716619851}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.57, y: -0.17, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4424136423956694}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1703181823350818
 GameObject:
   m_ObjectHideFlags: 0
@@ -14,7 +44,6 @@ GameObject:
   - component: {fileID: 95590110671199336}
   - component: {fileID: 50371170301181444}
   - component: {fileID: 114103423078676894}
-  - component: {fileID: 1168207143033302677}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -31,8 +60,9 @@ Transform:
   m_GameObject: {fileID: 1703181823350818}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_LocalScale: {x: 0.3, y: 0.5, z: 1}
+  m_Children:
+  - {fileID: 1716619852}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -142,10 +172,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -163,50 +193,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4d9e36ef7f3f2c4cbfd36635f5e3436, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 5
+  maxSpeed: 7
   timeToFullSpeed: 0.2
   timeToStop: 0.1
   jumpHeight: 3
   variableHangTime: 0
   coyoteTime: 0.2
   inputQueueTime: 0.2
-  dashSpeed: 15
-  dashControlLossDuration: 0.2
-  dashDuration: 0.5
+  dashSpeed: 12
+  dashControlLossDuration: 0.1
+  dashDuration: 0.2
   pauseDuration: 0.1
   dashCooldownTime: 1
   deflectRadius: 1
   deflectSlowdownTime: 0.6
   deflectRecoilSpeed: 3
-  FirePosition: {fileID: 0}
   bulletPreFab: {fileID: 7782749728104595142, guid: ebc3e20a9b5e840ea95cc79b2953403b,
     type: 3}
---- !u!114 &1168207143033302677
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1703181823350818}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d9e36ef7f3f2c4cbfd36635f5e3436, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxSpeed: 0
-  timeToFullSpeed: 0
-  timeToStop: 0
-  jumpHeight: 0
-  variableHangTime: 0
-  coyoteTime: 0
-  inputQueueTime: 0
-  dashSpeed: 0
-  dashControlLossDuration: 0
-  dashDuration: 0
-  pauseDuration: 0
-  dashCooldownTime: 0
-  deflectRadius: 0
-  deflectSlowdownTime: 0
-  deflectRecoilSpeed: 0
-  FirePosition: {fileID: 0}
-  bulletPreFab: {fileID: 0}
+  lineRenderer: {fileID: 0}
+  timeBeforeBulletPickup: 1
+  bulletSpeed: 20
+  spawnDistance: 0.5

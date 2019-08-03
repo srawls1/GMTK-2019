@@ -38,6 +38,8 @@ public class CharacterController : MonoBehaviour
 	private float jumpQueuedUntil;
 	private float lastDash;
 	private bool facingRight = true;
+	private bool hasBullet = true;
+	private float timeShotBullet;
 
 	public bool Charging
 	{
@@ -45,9 +47,13 @@ public class CharacterController : MonoBehaviour
 	}
 
 	[Header("Bullet")]
-	public Transform FirePosition;
 	public GameObject bulletPreFab;
 	public LineRenderer lineRenderer;
+<<<<<<< HEAD
+=======
+	public float timeBeforeBulletPickup;
+
+>>>>>>> 66bff011b7840555af54e96d77275c1d0d23141f
 	void Awake()
 	{
 		rigidbody = GetComponent<Rigidbody2D>();
@@ -63,6 +69,17 @@ public class CharacterController : MonoBehaviour
 		CheckForDeflect();
 		CheckForShoot();
 		ApplyHorizontalAcceleration();
+	}
+
+	private void OnCollisionEnter2D(Collision2D collision)
+	{
+		PlayerBullet bullet = collision.collider.GetComponent<PlayerBullet>();
+		if (Time.time > timeShotBullet + timeBeforeBulletPickup && bullet != null)
+		{
+			Destroy(bullet.gameObject);
+			hasBullet = true;
+			return;
+		}
 	}
 
 	private void CheckForDeflect()
@@ -115,7 +132,7 @@ public class CharacterController : MonoBehaviour
 	}
 	private void CheckForShoot()
 	{
-		if (Input.GetButtonUp("Fire"))
+		if (hasBullet && Input.GetButtonUp("Fire"))
 		{
 			Shoot();
 		}
@@ -160,7 +177,6 @@ public class CharacterController : MonoBehaviour
         for (float timePassed = 0f; timePassed < dashControlLossDuration; timePassed += Time.deltaTime)
 		{
 			rigidbody.velocity = velocity;
-			Debug.Log(rigidbody.velocity);
 			yield return null;
 		}
 
@@ -262,6 +278,8 @@ public class CharacterController : MonoBehaviour
 	public float spawnDistance = 0.5f;
 	private void Shoot()
 	{
+		hasBullet = false;
+		timeShotBullet = Time.time;
 		Vector2 start = transform.position;
 		Vector2 dest = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 		Vector2 direction = dest - start;
@@ -272,6 +290,6 @@ public class CharacterController : MonoBehaviour
 		
 		float rotZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 		GameObject b = Instantiate(bulletPreFab, start, Quaternion.Euler(0, 0, rotZ)) as GameObject;
-		b.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
+		//b.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
 	}
 }
