@@ -70,7 +70,7 @@ public class CharacterController : MonoBehaviour
 			animator.SetInteger("DeflectDirection", Mathf.RoundToInt(angle));
 			animator.SetTrigger("Deflect");
 
-			angle *= Mathf.PI / 4;
+            angle *= Mathf.PI / 4;
 			direction = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
 			StartCoroutine(DeflectRoutine(direction));
 		}
@@ -93,7 +93,8 @@ public class CharacterController : MonoBehaviour
 
 				projectile.GetDeflected(direction);
 				rigidbody.velocity = -direction.normalized * deflectSlowdownTime;
-			}
+                FMODUnity.RuntimeManager.PlayOneShot("event:/player/player_deflect");
+            }
 		}
 	}
 
@@ -138,9 +139,10 @@ public class CharacterController : MonoBehaviour
 		Vector2 velocity = direction * dashSpeed;
 		rigidbody.velocity = velocity;
 		Charging = true;
-		animator.SetBool("Charging", true);
+        animator.SetBool("Charging", true);
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Player/player_dash");
 
-		for (float timePassed = 0f; timePassed < dashControlLossDuration; timePassed += Time.deltaTime)
+        for (float timePassed = 0f; timePassed < dashControlLossDuration; timePassed += Time.deltaTime)
 		{
 			rigidbody.velocity = velocity;
 			Debug.Log(rigidbody.velocity);
@@ -160,7 +162,8 @@ public class CharacterController : MonoBehaviour
 
 		Charging = false;
 		animator.SetBool("Charging", false);
-	}
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Player/player_dash_recover");
+    }
 
 	private void ApplyHorizontalAcceleration()
 	{
@@ -216,9 +219,9 @@ public class CharacterController : MonoBehaviour
 		float jumpSpeed = Mathf.Sqrt(2f * jumpHeight * Physics2D.gravity.magnitude);
 		velocity.y = jumpSpeed;
 		rigidbody.velocity = velocity;
-
-		animator.SetTrigger("Jump");
-	}
+        animator.SetTrigger("Jump");
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Player/player_jump");
+    }
 
 	private void UpdateIsOnGround()
 	{

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="DAWAsset" id="{bc6796a1-9851-4710-94ba-f3bbec979e88}">
+		<property name="assetPath">
+			<value>20190803 - GMTK-2019.rpp.link/player_dash-001.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.2780833333333332</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{08d6f545-e3c9-4a83-b004-a8822b99a4ff}</destination>
+		</relationship>
+		<relationship name="project">
+			<destination>{6d039889-d092-4199-bb72-9f1e1f16d26c}</destination>
+		</relationship>
+	</object>
+</objects>
