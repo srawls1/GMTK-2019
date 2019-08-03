@@ -133,4 +133,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 10
-  speedUpStep: 0
+  timeBeforeStartReturning: 1
+  returnForce: 20
+  objToReturnTo: {fileID: 0}

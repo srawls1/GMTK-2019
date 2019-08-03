@@ -47,7 +47,7 @@ public class CharacterController : MonoBehaviour
 	}
 
 	[Header("Bullet")]
-	public GameObject bulletPreFab;
+	public PlayerBullet bulletPreFab;
 	public LineRenderer lineRenderer;
 	public float timeBeforeBulletPickup;
 
@@ -271,7 +271,6 @@ public class CharacterController : MonoBehaviour
 	}
 
 	
-	public float bulletSpeed = 60.0f;
 	public float spawnDistance = 0.5f;
 	private void Shoot()
 	{
@@ -286,7 +285,8 @@ public class CharacterController : MonoBehaviour
 		lineRenderer.SetPosition(1, dest);
 		
 		float rotZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-		GameObject b = Instantiate(bulletPreFab, start, Quaternion.Euler(0, 0, rotZ)) as GameObject;
+		PlayerBullet b = Instantiate(bulletPreFab, start, Quaternion.Euler(0, 0, rotZ)) as PlayerBullet;
+		b.objToReturnTo = gameObject;
 		//b.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
 	}
 }

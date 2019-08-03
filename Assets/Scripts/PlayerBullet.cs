@@ -6,28 +6,31 @@ using UnityEngine;
 public class PlayerBullet : MonoBehaviour
 {
 	[SerializeField] private float maxSpeed;
-	[SerializeField] private float speedUpStep;
+	[SerializeField] private float timeBeforeStartReturning;
+	[SerializeField] private float returnForce;
+
+	public GameObject objToReturnTo;
 
 	private new Rigidbody2D rigidbody;
 	private Vector2 velocity;
+	private float shotTime;
 
 	private void Awake()
 	{
 		rigidbody = GetComponent<Rigidbody2D>();
 		velocity = transform.right * maxSpeed;
 		rigidbody.velocity = velocity;
-		
+		shotTime = Time.time;
 	}
 
 	void Update()
 	{
-		/* TODO i want this to shoot out in the direction of the mouse cursor */
-		/*
-		if (rigidbody.velocity.magnitude > currentMaxSpeed)
+		velocity = rigidbody.velocity;
+		if (Time.time > shotTime + timeBeforeStartReturning)
 		{
-			rigidbody.velocity = rigidbody.velocity.normalized * baseMaxSpeed;
+			Vector2 diff = objToReturnTo.transform.position - transform.position;
+			rigidbody.AddForce(diff.normalized * returnForce);
 		}
-		*/
 	}
 
     void OnCollisionEnter2D (Collision2D col) {
