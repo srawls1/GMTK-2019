@@ -8,10 +8,12 @@ public class HomingProjectile : MonoBehaviour
 	[SerializeField] private float baseMaxSpeed;
 	[SerializeField] private float forceTowardPlayer;
 	[SerializeField] private float speedUpStep;
+	[SerializeField] private float deflectLetOffTime;
 	[SerializeField] private GameObject playerCharacter;
 
 	private new Rigidbody2D rigidbody;
 	private float currentMaxSpeed;
+	private float letOffEndTime;
 
 	private void Awake()
 	{
@@ -21,19 +23,24 @@ public class HomingProjectile : MonoBehaviour
 
 	void Update()
 	{
-		Vector2 distFromPlayer = playerCharacter.transform.position - transform.position;
-		Vector2 force = distFromPlayer.normalized * forceTowardPlayer - rigidbody.velocity;
-		rigidbody.AddForce(force);
-		if (rigidbody.velocity.magnitude > currentMaxSpeed)
+		if (Time.time > letOffEndTime)
 		{
-			rigidbody.velocity = rigidbody.velocity.normalized * baseMaxSpeed;
+			Vector2 distFromPlayer = playerCharacter.transform.position - transform.position;
+			Vector2 force = distFromPlayer.normalized * forceTowardPlayer - rigidbody.velocity;
+			rigidbody.AddForce(force);
+			if (rigidbody.velocity.magnitude > currentMaxSpeed)
+			{
+				rigidbody.velocity = rigidbody.velocity.normalized * baseMaxSpeed;
+			}
 		}
 	}
 
 	public void GetDeflected(Vector2 direction)
 	{
+		Debug.Log(direction);
 		currentMaxSpeed += speedUpStep;
 		rigidbody.velocity = direction * currentMaxSpeed;
+		letOffEndTime = Time.time + deflectLetOffTime;
 		// TODO - Address losing the gained speed maybe
 	}
 }

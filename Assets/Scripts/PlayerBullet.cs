@@ -5,23 +5,18 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerBullet : MonoBehaviour
 {
-	[SerializeField] private float baseMaxSpeed;
+	[SerializeField] private float maxSpeed;
 	[SerializeField] private float speedUpStep;
 
 	private new Rigidbody2D rigidbody;
-	private float currentMaxSpeed;
-
-	private void Start()
-	{
-		baseMaxSpeed = 5;
-		speedUpStep = 2;	
-	}
-
+	private Vector2 velocity;
 
 	private void Awake()
 	{
 		rigidbody = GetComponent<Rigidbody2D>();
-		currentMaxSpeed = baseMaxSpeed;
+		velocity = transform.right * maxSpeed;
+		rigidbody.velocity = velocity;
+		
 	}
 
 	void Update()
@@ -36,16 +31,12 @@ public class PlayerBullet : MonoBehaviour
 	}
 
     void OnCollisionEnter2D (Collision2D col) {
-		Debug.Log(col.collider.name);
+		//Debug.Log(col.collider.name);
 		HomingProjectile homingarrow = col.collider.GetComponent<HomingProjectile>();
 
 		if (homingarrow != null)
 		{
-			Debug.Log("Hello");
-			// find the vector of this object
-			Vector2 vel = rigidbody.velocity;
-			Debug.Log(vel);
-			homingarrow.GetDeflected(vel);
+			homingarrow.GetDeflected(velocity.normalized);
 		}
     }
 }

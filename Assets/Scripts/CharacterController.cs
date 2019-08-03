@@ -174,7 +174,6 @@ public class CharacterController : MonoBehaviour
         for (float timePassed = 0f; timePassed < dashControlLossDuration; timePassed += Time.deltaTime)
 		{
 			rigidbody.velocity = velocity;
-			Debug.Log(rigidbody.velocity);
 			yield return null;
 		}
 
@@ -288,6 +287,6 @@ public class CharacterController : MonoBehaviour
 		
 		float rotZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 		GameObject b = Instantiate(bulletPreFab, start, Quaternion.Euler(0, 0, rotZ)) as GameObject;
-		b.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
+		//b.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
 	}
 }
