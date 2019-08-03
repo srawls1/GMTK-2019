@@ -96,7 +96,7 @@
 			<value>1.3308843537414965</value>
 		</property>
 		<property name="pitch">
-			<value>13</value>
+			<value>24</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{c913a10e-1a8e-4099-9be5-d04ccf43b7cd}</destination>
@@ -104,7 +104,6 @@
 		</relationship>
 		<relationship name="sounds">
 			<destination>{fc09c32c-5ccd-4548-a1ec-fcaa32e3a04e}</destination>
-			<destination>{a5341e2d-71c3-4c27-a3bb-27e6e30c3a83}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{d1e657e1-538e-47a8-a5ae-3879fe9a66f6}">
@@ -147,11 +146,6 @@
 	<object class="SingleSound" id="{fc09c32c-5ccd-4548-a1ec-fcaa32e3a04e}">
 		<relationship name="audioFile">
 			<destination>{bc6796a1-9851-4710-94ba-f3bbec979e88}</destination>
-		</relationship>
-	</object>
-	<object class="SingleSound" id="{a5341e2d-71c3-4c27-a3bb-27e6e30c3a83}">
-		<relationship name="audioFile">
-			<destination>{40a011bb-d76d-499a-b8ca-0d84c213c96f}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{a4388a23-78e1-4697-ad18-860210908c69}">
