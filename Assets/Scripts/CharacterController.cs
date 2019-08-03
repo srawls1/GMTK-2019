@@ -24,6 +24,11 @@ public class CharacterController : MonoBehaviour
 	[SerializeField, Tooltip("The length of time that the game pauses when you start a dash")] private float pauseDuration;
 	[SerializeField] private float dashCooldownTime;
 
+	[Header("Deflect")]
+	[SerializeField] private float deflectRadius;
+	[SerializeField] private float deflectSlowdownTime;
+	[SerializeField] private float deflectRecoilSpeed;
+
 	private new Rigidbody2D rigidbody;
 	private Animator animator;
 	private new Collider2D collider;
@@ -50,7 +55,46 @@ public class CharacterController : MonoBehaviour
 		UpdateIsOnGround();
 		CheckForJump();
 		CheckForDash();
+		CheckForDeflect();
 		ApplyHorizontalAcceleration();
+	}
+
+	private void CheckForDeflect()
+	{
+		if (!Charging && Input.GetButton("Deflect"))
+		{
+			Vector2 direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+			float angle = Mathf.Atan2(direction.y, direction.x);
+			angle /= Mathf.PI / 4;
+			angle = Mathf.Round(angle);
+			animator.SetInteger("DeflectDirection", Mathf.RoundToInt(angle));
+			animator.SetTrigger("Deflect");
+
+			angle *= Mathf.PI / 4;
+			direction = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
+			StartCoroutine(DeflectRoutine(direction));
+		}
+	}
+
+	private IEnumerator DeflectRoutine(Vector2 direction)
+	{
+		Vector2 position = transform.position;
+		position += direction * deflectRadius * 0.5f;
+		Collider2D[] colliders = Physics2D.OverlapCircleAll(position, deflectRadius);
+		for (int i = 0; i < colliders.Length; ++i)
+		{
+			HomingProjectile projectile = colliders[i].GetComponent<HomingProjectile>();
+			if (projectile != null)
+			{
+				// TODO - Show particle or screen shader effect
+				Time.timeScale = 0f;
+				yield return new WaitForSecondsRealtime(deflectSlowdownTime);
+				Time.timeScale = 1f;
+
+				projectile.GetDeflected(direction);
+				rigidbody.velocity = -direction.normalized * deflectSlowdownTime;
+			}
+		}
 	}
 
 	private void CheckForDash()

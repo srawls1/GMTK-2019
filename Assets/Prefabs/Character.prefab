@@ -118,6 +118,9 @@ MonoBehaviour:
   dashDuration: 0.5
   pauseDuration: 0.1
   dashCooldownTime: 1
+  deflectRadius: 1
+  deflectSlowdownTime: 0.6
+  deflectRecoilSpeed: 3
 --- !u!212 &212154379914245960
 SpriteRenderer:
   m_ObjectHideFlags: 1

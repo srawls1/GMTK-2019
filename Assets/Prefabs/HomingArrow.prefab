@@ -62,7 +62,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!58 &58908424600770874
 CircleCollider2D:
@@ -193,8 +193,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1988e90fa98f3fa4f8a12cb1b3d0936e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 14
+  baseMaxSpeed: 10
   forceTowardPlayer: 25.26
+  speedUpStep: 2
   playerCharacter: {fileID: 0}
 --- !u!212 &212491712965957036
 SpriteRenderer:
