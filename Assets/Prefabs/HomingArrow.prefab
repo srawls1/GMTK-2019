@@ -202,8 +202,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1988e90fa98f3fa4f8a12cb1b3d0936e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMaxSpeed: 10
-  forceTowardPlayer: 10
+  baseMaxSpeed: 5
+  forceTowardPlayer: 5
   speedUpStep: 2
   deflectLetOffTime: 1
 --- !u!50 &50028873268399752

@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 7782749728104595142}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.9488586, y: -0.58, z: -3.7006195}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children:
   - {fileID: 4751330541191818282}
   m_Father: {fileID: 0}
@@ -114,9 +114,9 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 1
   m_AngularDrag: 0
-  m_GravityScale: 0
+  m_GravityScale: 0.7
   m_Material: {fileID: 6200000, guid: 8af9773d4b76c234ca370e828658480f, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -134,11 +134,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2095486f5bceb88169282b06cbffb00c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 10
+  maxSpeed: 5
   maxEffectiveChargeTime: 2
   chargeTimeScale: 3
   timeBeforeStartReturning: 1
-  returnForce: 20
+  returnForce: 0
   objToReturnTo: {fileID: 0}
   chargeTime: 0
 --- !u!96 &4950312079166493644
@@ -183,13 +183,13 @@ TrailRenderer:
   m_Time: 0.5
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.5
+    widthMultiplier: 0.2
     widthCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0
-        value: 1
+        time: 0.005947113
+        value: 0.99173546
         inSlope: 0
         outSlope: 0
         tangentMode: 0
