@@ -232,32 +232,6 @@ public class CharacterControllerTopDown : MonoBehaviour
         }
     }
 
-	private void ApplyHorizontalAcceleration()
-	{
-		if (!Charging && !isChargingShot)
-		{
-			float input = Mathf.Round(Input.GetAxisRaw("Horizontal"));
-			Vector2 velocity = rigidbody.velocity;
-			float time = input == 0f ? timeToStop : timeToFullSpeed;
-
-			velocity.x = Mathf.SmoothDamp(velocity.x, input * maxSpeed, ref acceleration, time);
-			if (!float.IsNaN(velocity.x))
-			{
-				rigidbody.velocity = velocity;
-			}
-
-			if (velocity.x > 0.05f)
-			{
-				facingRight = true;
-			}
-			if (velocity.x < -0.05f)
-			{
-				facingRight = false;
-			}
-			animator.SetFloat("Speed", velocity.x);
-		}
-	}
-
 	private void CheckForJump()
 	{
 		if (IsOnGround())
@@ -324,6 +298,7 @@ public class CharacterControllerTopDown : MonoBehaviour
 		while (Input.GetButton("Fire"))
 		{
 			isChargingShot = true;
+            Time.timeScale = 0.3f;
 			chargeTime += Time.deltaTime;
 			//todo
 			if (chargeTime < bulletPreFab.maxChargeTime)
@@ -336,6 +311,7 @@ public class CharacterControllerTopDown : MonoBehaviour
 		}
 		// set animation
 
+        Time.timeScale = 1f;
 		isChargingShot = false;
 
 		hasBullet = false;
