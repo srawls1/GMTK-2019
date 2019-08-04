@@ -376,5 +376,6 @@ public class CharacterController : MonoBehaviour
 		PlayerBullet b = Instantiate(bulletPreFab, start, Quaternion.Euler(0, 0, rotZ)) as PlayerBullet;
 		b.objToReturnTo = gameObject;
 		b.chargeTime = chargeTime;
+        animator.SetBool("Shooting", false);
 	}
 }
