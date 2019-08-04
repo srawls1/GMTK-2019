@@ -18,11 +18,24 @@ public class TrackingLine : MonoBehaviour
 	{
 		get; private set;
 	}
+
+
+	public float current_width;
+	public void updateLineWidth(float linewidth) {
+		lineRenderer.startWidth = linewidth;
+		lineRenderer.endWidth = linewidth;
+
+	}
+
+	void Awake() {
+		current_width = lineRenderer.startWidth;
+	}
 	
 
     // Update is called once per frame
     void Update()
     {
+		current_width = lineRenderer.startWidth;
 		Vector2 mouseMovement = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
 		if (!Mathf.Approximately(mouseMovement.magnitude, 0))
 		{

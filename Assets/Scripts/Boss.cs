@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class Boss : MonoBehaviour
@@ -17,6 +18,7 @@ public class Boss : MonoBehaviour
 
     [Header("Items")]
     [SerializeField] private HomingProjectile missile;
+    [SerializeField] private Image healthBar;
 
 	new private Collider2D collider;
 	private float timeShotMissile;
@@ -35,6 +37,7 @@ public class Boss : MonoBehaviour
     }
 
     void Update(){
+        healthBar.fillAmount = health / maxHealth;
 		if (currentProjectile == null)
 		{
 			StartCoroutine(spawnProjectile());
@@ -151,6 +154,7 @@ public class Boss : MonoBehaviour
 
     void die() {
         Debug.Log("Boss is dead");
+        healthBar.fillAmount = health / maxHealth;
         Destroy(gameObject);
 		Destroy(currentProjectile.gameObject);
     }

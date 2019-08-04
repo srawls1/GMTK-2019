@@ -45,6 +45,7 @@ public class CharacterController : MonoBehaviour
 	private float lastDash;
 	private bool facingRight = true;
 	private bool hasBullet = true;
+	private bool isChargingShot = false;
 	private float timeShotBullet;
 
 	public bool Charging
@@ -202,7 +203,7 @@ public class CharacterController : MonoBehaviour
 
 	private void ApplyHorizontalAcceleration()
 	{
-		if (!Charging)
+		if (!Charging && !isChargingShot)
 		{
 			float input = Mathf.Round(Input.GetAxisRaw("Horizontal"));
 			Vector2 velocity = rigidbody.velocity;
@@ -287,14 +288,27 @@ public class CharacterController : MonoBehaviour
 	{
 		// Set animation
 		float chargeTime = 0f;
+		// is this by value or by reference
+		float current_width = laser.current_width;
 		while (Input.GetButton("Fire"))
 		{
+			isChargingShot = true;
 			chargeTime += Time.deltaTime;
+			//todo
+			if (chargeTime < bulletPreFab.maxChargeTime)
+			{
+				float new_width = laser.current_width + 0.003f;
+				laser.updateLineWidth(new_width);
+			}
+
 			yield return null;
 		}
 		// set animation
 
+		isChargingShot = false;
+
 		hasBullet = false;
+		laser.updateLineWidth(current_width);
 		timeShotBullet = Time.time;
 		Vector2 start = transform.position;
 		Vector2 direction = laser.direction;
