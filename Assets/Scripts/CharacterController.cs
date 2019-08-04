@@ -70,9 +70,9 @@ public class CharacterController : MonoBehaviour
 		ApplyHorizontalAcceleration();
 	}
 
-	private void OnCollisionEnter2D(Collision2D collision)
+	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		PlayerBullet bullet = collision.collider.GetComponent<PlayerBullet>();
+		PlayerBullet bullet = collision.GetComponent<PlayerBullet>();
 		if (Time.time > timeShotBullet + timeBeforeBulletPickup && bullet != null)
 		{
 			Destroy(bullet.gameObject);
@@ -134,7 +134,6 @@ public class CharacterController : MonoBehaviour
 		//Debug.Log(Input.GetButton("Fire"));
 		if (hasBullet && Input.GetButtonUp("Fire"))
 		{
-			Debug.Log("Shooting");
 			Shoot();
 		}
 
@@ -186,7 +185,7 @@ public class CharacterController : MonoBehaviour
 		{
 			rigidbody.velocity = velocity;
 			float input = Input.GetAxisRaw("Horizontal");
-			if (input != 0f && direction.x * input <= 0) // There is horizontal input, and it's not in the direction of the dash, so we cancel out of it
+			if (!Mathf.Approximately(input, 0f) && direction.x * input <= 0) // There is horizontal input, and it's not in the direction of the dash, so we cancel out of it
 			{
 				break;
 			}

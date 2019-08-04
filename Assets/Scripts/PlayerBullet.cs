@@ -15,6 +15,11 @@ public class PlayerBullet : MonoBehaviour
 	private Vector2 velocity;
 	private float shotTime;
 
+	public bool returning
+	{
+		get { return Time.time > shotTime + timeBeforeStartReturning; }
+	}
+
 	private void Awake()
 	{
 		rigidbody = GetComponent<Rigidbody2D>();
@@ -26,7 +31,7 @@ public class PlayerBullet : MonoBehaviour
 	void Update()
 	{
 		velocity = rigidbody.velocity;
-		if (Time.time > shotTime + timeBeforeStartReturning)
+		if (returning)
 		{
 			Vector2 diff = objToReturnTo.transform.position - transform.position;
 			rigidbody.AddForce(diff.normalized * returnForce);
@@ -38,9 +43,10 @@ public class PlayerBullet : MonoBehaviour
 		}
 	}
 
-    void OnCollisionEnter2D (Collision2D col) {
+    void OnTriggerEnter2D (Collider2D col) {
+		Debug.Log(col.name);
 		//Debug.Log(col.collider.name);
-		HomingProjectile homingarrow = col.collider.GetComponent<HomingProjectile>();
+		HomingProjectile homingarrow = col.GetComponent<HomingProjectile>();
 
 		if (homingarrow != null)
 		{

@@ -10,28 +10,39 @@ public class HomingProjectile : MonoBehaviour
 	[SerializeField] private float forceTowardPlayer;
 	[SerializeField] private float speedUpStep;
 	[SerializeField] private float deflectLetOffTime;
-	[SerializeField] private GameObject playerCharacter;
 
+	private GameObject playerCharacter;
 	private new Rigidbody2D rigidbody;
 	private float currentMaxSpeed;
 	private float letOffEndTime;
 	private List<Vector2> path;
 
+	public bool deflecting
+	{
+		get { return Time.time < letOffEndTime; }
+	}
+
 	private void Awake()
 	{
+		playerCharacter = FindObjectOfType<CharacterController>().gameObject;
 		rigidbody = GetComponent<Rigidbody2D>();
 		currentMaxSpeed = baseMaxSpeed;
 	}
 
 	void Update()
 	{
-		if (Time.time > letOffEndTime)
+		if (!deflecting)
 		{
+			if (hasDirectPath(playerCharacter.transform.position))
+			{
+				path = new List<Vector2>();
+				path.Add(playerCharacter.transform.position);
+			}
 			if (path == null || path.Count == 0 || !hasDirectPath(path[0]) ||
 				Vector2.Distance(playerCharacter.transform.position, path[path.Count - 1]) > 1f)
 			{
 				path = NavMesh.instance.GetClosestPath(transform.position, playerCharacter.transform.position, NavTerrainTypes.Floor);
-				PrintPath(path);
+				//PrintPath(path);
 			}
 			if (path == null || path.Count == 0)
 			{
@@ -64,6 +75,12 @@ public class HomingProjectile : MonoBehaviour
 
 	private void PrintPath(List<Vector2> path)
 	{
+		if (path == null)
+		{
+			Debug.Log("null");
+			return;
+		}
+
 		StringBuilder builder = new StringBuilder("[");
 		bool commaNeeded = false;
 
@@ -83,7 +100,6 @@ public class HomingProjectile : MonoBehaviour
 
 	public void GetDeflected(Vector2 direction)
 	{
-		Debug.Log(direction);
 		currentMaxSpeed += speedUpStep;
 		rigidbody.velocity = direction * currentMaxSpeed;
 		letOffEndTime = Time.time + deflectLetOffTime;

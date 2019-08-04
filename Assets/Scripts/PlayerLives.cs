@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerLives : MonoBehaviour
 {
 	[SerializeField] private float baseMaxHealth;
-    [SerializeField] private Rigidbody2D rigidbody;
+    //[SerializeField] private Rigidbody2D rigidbody;
     [SerializeField] private Image healthBar;
     // Start is called before the first frame update
 
@@ -14,28 +14,27 @@ public class PlayerLives : MonoBehaviour
 
     void Start()
     {
-        float current_health = baseMaxHealth;
-        Debug.Log(current_health);
-        Debug.Log(baseMaxHealth);
+        current_health = baseMaxHealth;
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(current_health); // how come this returns 0 here but it's 5 in Start? can't be scoping, right
-        Debug.Log((current_health/baseMaxHealth));
         healthBar.fillAmount = current_health / baseMaxHealth;
-        
     }
 
-    void OnCollisionEnter2D(Collision2D other) {
-        HomingProjectile homingprojectile = other.collider.GetComponent<HomingProjectile>();
-        if (homingprojectile != null) {
+    void OnTriggerEnter2D(Collider2D other) {
+		Debug.Log(other.name);
+        HomingProjectile homingprojectile = other.GetComponent<HomingProjectile>();
+        if (homingprojectile != null && !homingprojectile.deflecting) {
             Debug.Log("Lost 1 health");
             current_health -= 1;
             Destroy(other.gameObject);
+			if (current_health == 0)
+			{
+				Debug.Log("Player is dead");
+			}
         }
-        // TODO build healthbar UI element
     }
 }
