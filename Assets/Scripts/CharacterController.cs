@@ -145,6 +145,7 @@ public class CharacterController : MonoBehaviour
 		lastDash = Time.time;
 		Vector2 direction;
 
+		/*
 		Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), IsOnGround() ? 0f : Input.GetAxisRaw("Vertical"));
 		if (input.magnitude < 0.1f)
 		{
@@ -158,6 +159,9 @@ public class CharacterController : MonoBehaviour
 			angle *= Mathf.PI / 4;
 			direction = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
 		}
+		*/
+
+		direction = GetCursorAngle();
 
 		StartCoroutine(DashRoutine(direction));
 	}
@@ -271,6 +275,12 @@ public class CharacterController : MonoBehaviour
 		{
 			animator.SetBool("OnFloor", false);
 		}
+	}
+
+	private Vector2 GetCursorAngle() {
+			Vector2 start = rigidbody.position;
+			Vector2 end = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+			return (end - start).normalized;
 	}
 
 	private IEnumerator Shoot()
