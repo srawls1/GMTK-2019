@@ -66,7 +66,9 @@ public class HomingProjectile : MonoBehaviour
 		}
 	}
 
-	private bool hasDirectPath(Vector2 point)
+    //RuntimeManager.PlayOneshot("event:/boss/boss_bullet_deflected"); // TODO find how to trigger the bullets deflecting sound
+
+    private bool hasDirectPath(Vector2 point)
 	{
 		Vector2 loc = transform.position;
 		Vector2 dir = point - loc;

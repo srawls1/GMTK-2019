@@ -2,7 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using FMODUnity;
+using FMODUnity;
+using FMOD.Studio;
 
 [RequireComponent(typeof(Rigidbody2D)), RequireComponent(typeof(Animator))]
 public class CharacterController : MonoBehaviour
@@ -47,8 +48,9 @@ public class CharacterController : MonoBehaviour
 	private bool hasBullet = true;
 	private bool isChargingShot = false;
 	private float timeShotBullet;
+    //EventInstance player_bullet_charge_sound = RuntimeManager.CreateInstance("event:/player/player_bullet_charge"); BROKEN SOMEWHERE
 
-	public bool Charging
+    public bool Charging
 	{
 		get; private set;
 	}
@@ -117,7 +119,7 @@ public class CharacterController : MonoBehaviour
 
 				projectile.GetDeflected(direction);
 				rigidbody.velocity = -direction.normalized * deflectSlowdownTime;
-                //FMODUnity.RuntimeManager.PlayOneShot("event:/player/player_deflect");
+                RuntimeManager.PlayOneShot("event:/player/player_deflect");
             }
 		}
 	}
@@ -133,10 +135,11 @@ public class CharacterController : MonoBehaviour
 
 	private void CheckForShoot()
 	{
-		if (hasBullet && Input.GetButtonDown("Fire"))
-		{
-			StartCoroutine(Shoot());
-		}
+        if (hasBullet && Input.GetButtonDown("Fire"))
+        {
+            StartCoroutine(Shoot());
+            //player_bullet_charge_sound.start();
+        }
 
 	}
 
@@ -177,7 +180,7 @@ public class CharacterController : MonoBehaviour
 		rigidbody.velocity = velocity;
 		Charging = true;
         animator.SetBool("Charging", true);
-        //FMODUnity.RuntimeManager.PlayOneShot("event:/Player/player_dash");
+        RuntimeManager.PlayOneShot("event:/Player/player_dash");
 
         for (float timePassed = 0f; timePassed < dashControlLossDuration; timePassed += Time.deltaTime)
 		{
@@ -198,7 +201,7 @@ public class CharacterController : MonoBehaviour
 
 		Charging = false;
 		animator.SetBool("Charging", false);
-        //FMODUnity.RuntimeManager.PlayOneShot("event:/Player/player_dash_recover");
+        RuntimeManager.PlayOneShot("event:/Player/player_dash_recover");
     }
 
 	private void ApplyHorizontalAcceleration()
@@ -259,10 +262,11 @@ public class CharacterController : MonoBehaviour
 		velocity.y = jumpSpeed;
 		rigidbody.velocity = velocity;
         animator.SetTrigger("Jump");
-        //FMODUnity.RuntimeManager.PlayOneShot("event:/Player/player_jump");
+        RuntimeManager.PlayOneShot("event:/Player/player_jump");
+        // RuntimeManager.PlayOneShot("event:/Player/player_jump_land"); //TODO find where to trigger the landing sound
     }
 
-	private void UpdateIsOnGround()
+    private void UpdateIsOnGround()
 	{
 		Vector2 bounds = collider.bounds.extents;
 		// This raycast downward just beyond the extent of the character's collider will check if the character is standing on something
@@ -303,11 +307,13 @@ public class CharacterController : MonoBehaviour
 
 			yield return null;
 		}
-		// set animation
+        // set animation
+        RuntimeManager.PlayOneShot("event:/player/player_shoot");
 
-		isChargingShot = false;
+        isChargingShot = false;
+        //player_bullet_charge_sound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
 
-		hasBullet = false;
+        hasBullet = false;
 		laser.updateLineWidth(current_width);
 		timeShotBullet = Time.time;
 		Vector2 start = transform.position;
