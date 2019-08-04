@@ -114,9 +114,9 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 1
+  m_LinearDrag: 0.5
   m_AngularDrag: 0
-  m_GravityScale: 0.7
+  m_GravityScale: 0.5
   m_Material: {fileID: 6200000, guid: 8af9773d4b76c234ca370e828658480f, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -134,10 +134,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2095486f5bceb88169282b06cbffb00c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 5
+  maxSpeed: 10
   maxEffectiveChargeTime: 2
   chargeTimeScale: 3
-  timeBeforeStartReturning: 1
+  timeBeforeStartReturning: 1000
   returnForce: 0
   objToReturnTo: {fileID: 0}
   chargeTime: 0

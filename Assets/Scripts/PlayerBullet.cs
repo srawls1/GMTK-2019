@@ -18,6 +18,10 @@ public class PlayerBullet : MonoBehaviour
 	private Vector2 velocity;
 	private float shotTime;
 
+	public float maxChargeTime {
+		get { return maxEffectiveChargeTime; }
+	}
+
 	public bool returning
 	{
 		get { return Time.time > shotTime + timeBeforeStartReturning; }
