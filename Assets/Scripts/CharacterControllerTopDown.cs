@@ -173,6 +173,9 @@ public class CharacterControllerTopDown : MonoBehaviour
 
 	private IEnumerator DashRoutine(Vector2 direction)
 	{
+		Charging = true;
+        animator.SetBool("Charging", true);
+
 		Time.timeScale = 0f;
 		yield return new WaitForSecondsRealtime(pauseDuration);
 		Time.timeScale = 1f;
@@ -190,33 +193,9 @@ public class CharacterControllerTopDown : MonoBehaviour
 		for (float timePassed = 0f; timePassed < remainingTime; timePassed += Time.deltaTime) {
 			rigidbody.velocity = velocity;
         }
-        
-		Charging = true;
-        animator.SetBool("Charging", true);
-        //FMODUnity.RuntimeManager.PlayOneShot("event:/Player/player_dash");
+        Charging = false;
+        animator.SetBool("Charging", false);
 
-        /*
-        for (float timePassed = 0f; timePassed < dashControlLossDuration; timePassed += Time.deltaTime)
-		{
-			rigidbody.velocity = velocity;
-			yield return null;
-		}
-
-		float remainingTime = dashDuration - dashControlLossDuration;
-		for (float timePassed = 0f; timePassed < remainingTime; timePassed += Time.deltaTime)
-		{
-			rigidbody.velocity = velocity;
-			float input = Input.GetAxisRaw("Horizontal");
-			if (!Mathf.Approximately(input, 0f) && direction.x * input <= 0) // There is horizontal input, and it's not in the direction of the dash, so we cancel out of it
-			{
-				break;
-			}
-		}
-        */
-
-		Charging = false;
-		animator.SetBool("Charging", false);
-        //FMODUnity.RuntimeManager.PlayOneShot("event:/Player/player_dash_recover");
     }
 
     private void Move() {

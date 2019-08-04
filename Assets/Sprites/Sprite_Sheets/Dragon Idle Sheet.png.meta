@@ -1,7 +1,25 @@
 fileFormatVersion: 2
 guid: 1d9bc2b0f635cbe78a700c8c89fdcf16
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -4282335067585508333
+    second: Dragon Idle Sheet_0
+  - first:
+      213: 4163145983095505193
+    second: Dragon Idle Sheet_1
+  - first:
+      213: -6094767093403601864
+    second: Dragon Idle Sheet_2
+  - first:
+      213: 2165386394170037460
+    second: Dragon Idle Sheet_3
+  - first:
+      213: 3588416985929847888
+    second: Dragon Idle Sheet_4
+  - first:
+      213: -3907597248645936120
+    second: Dragon Idle Sheet_5
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -31,7 +49,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -40,7 +58,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -63,7 +81,19 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -72,7 +102,133 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Dragon Idle Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 5
+        width: 233
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb6f12b0b334fe8969babaae0808a9d1
+      internalID: -4282335067585508333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon Idle Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 6
+        width: 231
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a93a0917275e1bf980aa5c42c7bd058
+      internalID: 4163145983095505193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon Idle Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 6
+        width: 230
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc9628dc438bc24c0901ded58cf06b5b
+      internalID: -6094767093403601864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon Idle Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 764
+        y: 6
+        width: 230
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbcd4ab63e428eaceb0c0bfff485d7af
+      internalID: 2165386394170037460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon Idle Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1016
+        y: 6
+        width: 231
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb20177be87e53c36816df546d6f2555
+      internalID: 3588416985929847888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon Idle Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1266
+        y: 5
+        width: 233
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 932690a6161f399f48a48c75d62eee59
+      internalID: -3907597248645936120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

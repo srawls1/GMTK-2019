@@ -29,6 +29,8 @@ public class Boss : MonoBehaviour
 	private int currentLocation;
 	bool workingOnSummon;
 
+	public Animator animator;
+
     void Awake() {
 		collider = GetComponent<Collider2D>();
 		GetLocation();
@@ -57,11 +59,14 @@ public class Boss : MonoBehaviour
 		yield return StartCoroutine(Teleport());
 
 		// TODO - animation?
+		animator.SetBool("isShooting", true);
 		yield return new WaitForSeconds(timeToSummonArrow);
 
         // Make sure the boss is immune to its own projectile when spawning it
         timeShotMissile = Time.time;
+
         currentProjectile = Instantiate(missile, transform.position, Quaternion.identity);
+		animator.SetBool("isShooting", false);
 		workingOnSummon = false;
     }
 
@@ -146,15 +151,15 @@ public class Boss : MonoBehaviour
 	void takeDamage(float damage) {
 		Debug.Log("Boss took damage: " + damage);
         health -= damage;
-        // TODO: probably play some damage animation here
-        //RuntimeManager.PlayOneShot("event:/boss/boss_damaged");
+		// TODO: this instantly sets and resets the trigger. We have to somehow "yield" to the animation to allow it to play"
+		animator.SetTrigger("gotHit");
         if (health <= 0) {
             die();
         }
-
 		teleportPoints.RemoveAt(currentLocation);
 		StartCoroutine(Teleport());
     }
+
 
     void die() {
         Debug.Log("Boss is dead");
