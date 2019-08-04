@@ -9,33 +9,52 @@ using UnityEngine;
 public class CharacterController : MonoBehaviour
 {
 	[Header("Running")]
-	[SerializeField] private float maxSpeed;
-	[SerializeField] private float timeToFullSpeed;
-	[SerializeField] private float timeToStop;
+	[SerializeField]
+	private float maxSpeed;
+	[SerializeField]
+	private float timeToFullSpeed;
+	[SerializeField]
+	private float timeToStop;
 
 	[Header("Jumping")]
-	[SerializeField] private float jumpHeight;
-	[SerializeField] private float variableHangTime;
-	[SerializeField] private float coyoteTime;
-	[SerializeField] private float inputQueueTime;
+	[SerializeField]
+	private float jumpHeight;
+	[SerializeField]
+	private float variableHangTime;
+	[SerializeField]
+	private float coyoteTime;
+	[SerializeField]
+	private float inputQueueTime;
 
 	[Header("Dash")]
-	[SerializeField] private float dashSpeed;
-	[SerializeField] private float dashControlLossDuration;
-	[SerializeField] private float dashDuration;
-	[SerializeField, Tooltip("The length of time that the game pauses when you start a dash")] private float pauseDuration;
-	[SerializeField] private float dashCooldownTime;
+	[SerializeField]
+	private float dashSpeed;
+	[SerializeField]
+	private float dashControlLossDuration;
+	[SerializeField]
+	private float dashDuration;
+	[SerializeField, Tooltip("The length of time that the game pauses when you start a dash")]
+	private float pauseDuration;
+	[SerializeField]
+	private float dashCooldownTime;
 
 	[Header("Deflect")]
-	[SerializeField] private float deflectRadius;
-	[SerializeField] private float deflectSlowdownTime;
-	[SerializeField] private float deflectRecoilSpeed;
+	[SerializeField]
+	private float deflectRadius;
+	[SerializeField]
+	private float deflectSlowdownTime;
+	[SerializeField]
+	private float deflectRecoilSpeed;
 
 	[Header("Bullet")]
-	[SerializeField] private PlayerBullet bulletPreFab;
-	[SerializeField] private TrackingLine laser;
-	[SerializeField] private float timeBeforeBulletPickup;
-	[SerializeField] private float spawnDistance = 0.5f;
+	[SerializeField]
+	private PlayerBullet bulletPreFab;
+	[SerializeField]
+	private TrackingLine laser;
+	[SerializeField]
+	private float timeBeforeBulletPickup;
+	[SerializeField]
+	private float spawnDistance = 0.5f;
 
 	private new Rigidbody2D rigidbody;
 	private Animator animator;
@@ -48,9 +67,9 @@ public class CharacterController : MonoBehaviour
 	private bool hasBullet = true;
 	private bool isChargingShot = false;
 	private float timeShotBullet;
-    //EventInstance player_bullet_charge_sound = RuntimeManager.CreateInstance("event:/player/player_bullet_charge"); BROKEN SOMEWHERE
+	//EventInstance player_bullet_charge_sound = RuntimeManager.CreateInstance("event:/player/player_bullet_charge"); BROKEN SOMEWHERE
 
-    public bool Charging
+	public bool Charging
 	{
 		get; private set;
 	}
@@ -62,16 +81,17 @@ public class CharacterController : MonoBehaviour
 		animator = GetComponent<Animator>();
 		collider = GetComponent<Collider2D>();
 	}
-	
+
 	void Update()
 	{
-		if (!PauseMenu.GameIsPaused) {
-		UpdateIsOnGround();
-		CheckForJump();
-		CheckForDash();
-		CheckForDeflect();
-		CheckForShoot();
-		ApplyHorizontalAcceleration();
+		if (!PauseMenu.GameIsPaused)
+		{
+			UpdateIsOnGround();
+			CheckForJump();
+			CheckForDash();
+			CheckForDeflect();
+			CheckForShoot();
+			ApplyHorizontalAcceleration();
 		}
 	}
 
@@ -82,8 +102,8 @@ public class CharacterController : MonoBehaviour
 		{
 			Destroy(bullet.gameObject);
 			hasBullet = true;
-            //RuntimeManager.PlayOneShot("event:/player/player_bullet_collect");
-            return;
+			//RuntimeManager.PlayOneShot("event:/player/player_bullet_collect");
+			return;
 		}
 	}
 
@@ -98,7 +118,7 @@ public class CharacterController : MonoBehaviour
 			animator.SetInteger("DeflectDirection", Mathf.RoundToInt(angle));
 			animator.SetTrigger("Deflect");
 
-            angle *= Mathf.PI / 4;
+			angle *= Mathf.PI / 4;
 			direction = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
 			StartCoroutine(DeflectRoutine(direction));
 		}
@@ -122,8 +142,8 @@ public class CharacterController : MonoBehaviour
 
 				projectile.GetDeflected(direction);
 				rigidbody.velocity = -direction.normalized * deflectSlowdownTime;
-                //RuntimeManager.PlayOneShot("event:/player/player_deflect");
-            }
+				//RuntimeManager.PlayOneShot("event:/player/player_deflect");
+			}
 		}
 	}
 
@@ -133,16 +153,16 @@ public class CharacterController : MonoBehaviour
 		{
 			Dash();
 		}
-		
+
 	}
 
 	private void CheckForShoot()
 	{
-        if (hasBullet && Input.GetButtonDown("Fire"))
-        {
-            StartCoroutine(Shoot());
-            //player_bullet_charge_sound.start();
-        }
+		if (hasBullet && Input.GetButtonDown("Fire"))
+		{
+			StartCoroutine(Shoot());
+			//player_bullet_charge_sound.start();
+		}
 
 	}
 
@@ -182,10 +202,10 @@ public class CharacterController : MonoBehaviour
 		Vector2 velocity = direction * dashSpeed;
 		rigidbody.velocity = velocity;
 		Charging = true;
-        animator.SetBool("Charging", true);
-        //RuntimeManager.PlayOneShot("event:/Player/player_dash");
+		animator.SetBool("Charging", true);
+		//RuntimeManager.PlayOneShot("event:/Player/player_dash");
 
-        for (float timePassed = 0f; timePassed < dashControlLossDuration; timePassed += Time.deltaTime)
+		for (float timePassed = 0f; timePassed < dashControlLossDuration; timePassed += Time.deltaTime)
 		{
 			rigidbody.velocity = velocity;
 			yield return null;
@@ -198,14 +218,18 @@ public class CharacterController : MonoBehaviour
 			float input = Input.GetAxisRaw("Horizontal");
 			if (!Mathf.Approximately(input, 0f) && direction.x * input <= 0) // There is horizontal input, and it's not in the direction of the dash, so we cancel out of it
 			{
+				Debug.Log("Cancelling");
+				Debug.Log(input);
+				Debug.Log(direction.x * input);
 				break;
 			}
 		}
 
+		Debug.Log("End of dash");
 		Charging = false;
 		animator.SetBool("Charging", false);
-        //RuntimeManager.PlayOneShot("event:/Player/player_dash_recover");
-    }
+		//RuntimeManager.PlayOneShot("event:/Player/player_dash_recover");
+	}
 
 	private void ApplyHorizontalAcceleration()
 	{
@@ -215,11 +239,31 @@ public class CharacterController : MonoBehaviour
 			Vector2 velocity = rigidbody.velocity;
 			float time = input == 0f ? timeToStop : timeToFullSpeed;
 
-			velocity.x = Mathf.SmoothDamp(velocity.x, input * maxSpeed, ref acceleration, time);
-			if (!float.IsNaN(velocity.x))
+			float x = Mathf.SmoothDamp(velocity.x, input * maxSpeed, ref acceleration, time);
+			if (float.IsNaN(x))
 			{
-				rigidbody.velocity = velocity;
+				Debug.Log(input);
+				float goalVel = input * maxSpeed;
+				Debug.Log(goalVel);
+				if (goalVel > velocity.x)
+				{
+					acceleration = maxSpeed / timeToFullSpeed;
+				}
+				else
+				{
+					acceleration = -maxSpeed / timeToFullSpeed;
+				}
+				Debug.Log(acceleration);
+
+				velocity.x += acceleration * Time.deltaTime;
+				Debug.Log(velocity.x);
 			}
+			else
+			{
+				velocity.x = x;
+			}
+
+			rigidbody.velocity = velocity;
 
 			if (velocity.x > 0.05f)
 			{
@@ -264,12 +308,12 @@ public class CharacterController : MonoBehaviour
 		float jumpSpeed = Mathf.Sqrt(2f * jumpHeight * Physics2D.gravity.magnitude);
 		velocity.y = jumpSpeed;
 		rigidbody.velocity = velocity;
-        animator.SetTrigger("Jump");
-        //RuntimeManager.PlayOneShot("event:/Player/player_jump");
-        // RuntimeManager.PlayOneShot("event:/Player/player_jump_land"); //TODO find where to trigger the landing sound
-    }
+		animator.SetTrigger("Jump");
+		//RuntimeManager.PlayOneShot("event:/Player/player_jump");
+		// RuntimeManager.PlayOneShot("event:/Player/player_jump_land"); //TODO find where to trigger the landing sound
+	}
 
-    private void UpdateIsOnGround()
+	private void UpdateIsOnGround()
 	{
 		Vector2 bounds = collider.bounds.extents;
 		// This raycast downward just beyond the extent of the character's collider will check if the character is standing on something
@@ -285,10 +329,11 @@ public class CharacterController : MonoBehaviour
 		}
 	}
 
-	private Vector2 GetCursorAngle() {
-			Vector2 start = rigidbody.position;
-			Vector2 end = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-			return (end - start).normalized;
+	private Vector2 GetCursorAngle()
+	{
+		Vector2 start = rigidbody.position;
+		Vector2 end = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+		return (end - start).normalized;
 	}
 
 	private IEnumerator Shoot()
@@ -310,19 +355,19 @@ public class CharacterController : MonoBehaviour
 
 			yield return null;
 		}
-        // set animation
-        //RuntimeManager.PlayOneShot("event:/player/player_shoot");
+		// set animation
+		//RuntimeManager.PlayOneShot("event:/player/player_shoot");
 
-        isChargingShot = false;
-        //player_bullet_charge_sound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT); // Stops charging sound, doesnt work and I don't know why
+		isChargingShot = false;
+		//player_bullet_charge_sound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT); // Stops charging sound, doesnt work and I don't know why
 
-        hasBullet = false;
+		hasBullet = false;
 		laser.updateLineWidth(current_width);
 		timeShotBullet = Time.time;
 		Vector2 start = transform.position;
 		Vector2 direction = laser.direction;
 		start += direction.normalized * spawnDistance;
-		
+
 		float rotZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 		PlayerBullet b = Instantiate(bulletPreFab, start, Quaternion.Euler(0, 0, rotZ)) as PlayerBullet;
 		b.objToReturnTo = gameObject;
