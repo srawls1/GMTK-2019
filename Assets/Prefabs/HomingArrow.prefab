@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 50028873268399752}
   - component: {fileID: 58908424600770874}
   - component: {fileID: 8995781744316574266}
+  - component: {fileID: -8306757206505636420}
   m_Layer: 0
   m_Name: HomingArrow
   m_TagString: Untagged
@@ -258,8 +259,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CollisionTag: 
   Event: event:/boss/boss_bullet_flight
-  PlayEvent: 11
-  StopEvent: 12
+  PlayEvent: 1
+  StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
@@ -267,6 +268,23 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 0
   OverrideMaxDistance: 0
+--- !u!114 &-8306757206505636420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1253632515393646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 744a208c85da6d04c861d81b992e4ead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Emitters:
+  - Target: {fileID: 8995781744316574266}
+    Params: []
+  TriggerEvent: 9
 --- !u!1 &4848056033909071894
 GameObject:
   m_ObjectHideFlags: 0

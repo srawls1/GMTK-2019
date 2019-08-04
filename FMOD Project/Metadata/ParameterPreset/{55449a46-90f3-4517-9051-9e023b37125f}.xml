@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="ParameterPreset" id="{55449a46-90f3-4517-9051-9e023b37125f}">
 		<property name="name">
-			<value>intensity</value>
+			<value>song_intensity</value>
 		</property>
 		<relationship name="folder">
 			<destination>{464a747d-368c-43f5-9754-76c35f1fa644}</destination>
@@ -15,8 +15,14 @@
 		<property name="maximum">
 			<value>3</value>
 		</property>
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
 		<property name="initialValue">
 			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
 		</property>
 	</object>
 </objects>
