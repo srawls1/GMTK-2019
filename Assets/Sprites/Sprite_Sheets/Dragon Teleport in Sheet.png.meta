@@ -1,7 +1,76 @@
 fileFormatVersion: 2
 guid: f832583454df3f2999967d02120c161b
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -275112911430052177
+    second: Dragon Teleport in Sheet_0
+  - first:
+      213: 3050770941282550355
+    second: Dragon Teleport in Sheet_1
+  - first:
+      213: 2212100111073863708
+    second: Dragon Teleport in Sheet_2
+  - first:
+      213: 1715182398604444183
+    second: Dragon Teleport in Sheet_3
+  - first:
+      213: 272867565840375505
+    second: Dragon Teleport in Sheet_4
+  - first:
+      213: 5910246862773965329
+    second: Dragon Teleport in Sheet_5
+  - first:
+      213: 3736672514755872444
+    second: Dragon Teleport in Sheet_6
+  - first:
+      213: 4489527763507425438
+    second: Dragon Teleport in Sheet_7
+  - first:
+      213: -7073309369919299070
+    second: Dragon Teleport in Sheet_8
+  - first:
+      213: -7748168978299707792
+    second: Dragon Teleport in Sheet_9
+  - first:
+      213: -5749825741944944011
+    second: Dragon Teleport in Sheet_10
+  - first:
+      213: -8577787062840638258
+    second: Dragon Teleport in Sheet_11
+  - first:
+      213: -7351597327486444438
+    second: Dragon Teleport in Sheet_12
+  - first:
+      213: -6062134407496792267
+    second: Dragon Teleport in Sheet_13
+  - first:
+      213: -6968218358439104412
+    second: Dragon Teleport in Sheet_14
+  - first:
+      213: -3101699978940324440
+    second: Dragon Teleport in Sheet_15
+  - first:
+      213: -4917387901080941575
+    second: Dragon Teleport in Sheet_16
+  - first:
+      213: -4630007575929453606
+    second: Dragon Teleport in Sheet_17
+  - first:
+      213: 6103880175709256407
+    second: Dragon Teleport in Sheet_18
+  - first:
+      213: 7111669489146855350
+    second: Dragon Teleport in Sheet_19
+  - first:
+      213: -4955672563190794138
+    second: Dragon Teleport in Sheet_20
+  - first:
+      213: 8384000242770288056
+    second: Dragon Teleport in Sheet_21
+  - first:
+      213: -2244880968505930069
+    second: Dragon Teleport in Sheet_22
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -84,7 +153,175 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Dragon Teleport in Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 251
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fb830c6ed455f8b39d7c9378089eb28
+      internalID: -275112911430052177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon Teleport in Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 0
+        width: 254
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29fe292fab603d0e69b873070832f360
+      internalID: 3050770941282550355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon Teleport in Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 0
+        width: 229
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa2b4b360be8a2b18bbdb87dae1c7582
+      internalID: 2212100111073863708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon Teleport in Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 745
+        y: 0
+        width: 251
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a130250db9caf037785e233a48772439
+      internalID: 1715182398604444183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon Teleport in Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 0
+        width: 238
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52cf843d3a9fd2ddc952309ef219d796
+      internalID: 272867565840375505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon Teleport in Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1253
+        y: 0
+        width: 246
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f1e04dfb1ff21f40ae1fcfbfd41eba3
+      internalID: 5910246862773965329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon Teleport in Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 1504
+        y: 0
+        width: 256
+        height: 187
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 449b31bf141cc7caeaa41ce1bab08bc9
+      internalID: 3736672514755872444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon Teleport in Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 1760
+        y: 0
+        width: 240
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e8570af928fb30bab04bb4a5d2e208f
+      internalID: 4489527763507425438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

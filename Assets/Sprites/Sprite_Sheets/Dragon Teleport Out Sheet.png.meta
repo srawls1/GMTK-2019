@@ -1,7 +1,115 @@
 fileFormatVersion: 2
 guid: 332e6835bc929e892908296282ac6772
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -6323986479294386090
+    second: Dragon Teleport Out Sheet_0
+  - first:
+      213: -1439728460061283167
+    second: Dragon Teleport Out Sheet_1
+  - first:
+      213: 2627426582426539854
+    second: Dragon Teleport Out Sheet_2
+  - first:
+      213: 7199417316255137700
+    second: Dragon Teleport Out Sheet_3
+  - first:
+      213: -3715505024460904587
+    second: Dragon Teleport Out Sheet_4
+  - first:
+      213: 7041345900795738373
+    second: Dragon Teleport Out Sheet_5
+  - first:
+      213: 685494223051187847
+    second: Dragon Teleport Out Sheet_6
+  - first:
+      213: -7857602759602404962
+    second: Dragon Teleport Out Sheet_7
+  - first:
+      213: 3292856184922280404
+    second: Dragon Teleport Out Sheet_8
+  - first:
+      213: 7280836614501054127
+    second: Dragon Teleport Out Sheet_9
+  - first:
+      213: -4977902231174856140
+    second: Dragon Teleport Out Sheet_10
+  - first:
+      213: -2904559894074026032
+    second: Dragon Teleport Out Sheet_11
+  - first:
+      213: -4663193577414445449
+    second: Dragon Teleport Out Sheet_12
+  - first:
+      213: 188871105965632650
+    second: Dragon Teleport Out Sheet_13
+  - first:
+      213: 1204773085260848410
+    second: Dragon Teleport Out Sheet_14
+  - first:
+      213: -6954843658190372872
+    second: Dragon Teleport Out Sheet_15
+  - first:
+      213: 5789956422738615757
+    second: Dragon Teleport Out Sheet_16
+  - first:
+      213: 6271220763749345203
+    second: Dragon Teleport Out Sheet_17
+  - first:
+      213: -2087795163989455748
+    second: Dragon Teleport Out Sheet_18
+  - first:
+      213: -1778245128800230921
+    second: Dragon Teleport Out Sheet_19
+  - first:
+      213: -5304366782796480872
+    second: Dragon Teleport Out Sheet_20
+  - first:
+      213: -6684289224223532957
+    second: Dragon Teleport Out Sheet_21
+  - first:
+      213: 8674736883667646053
+    second: Dragon Teleport Out Sheet_22
+  - first:
+      213: -7495297209816185302
+    second: Dragon Teleport Out Sheet_23
+  - first:
+      213: -3169527948863267379
+    second: Dragon Teleport Out Sheet_24
+  - first:
+      213: 1742992214987417354
+    second: Dragon Teleport Out Sheet_25
+  - first:
+      213: -2375382801563061556
+    second: Dragon Teleport Out Sheet_26
+  - first:
+      213: 6410546331217133639
+    second: Dragon Teleport Out Sheet_27
+  - first:
+      213: -7537577859590527546
+    second: Dragon Teleport Out Sheet_28
+  - first:
+      213: -292127883734573640
+    second: Dragon Teleport Out Sheet_29
+  - first:
+      213: 8024964226473759529
+    second: Dragon Teleport Out Sheet_30
+  - first:
+      213: -437710607422641443
+    second: Dragon Teleport Out Sheet_31
+  - first:
+      213: -2950934033107199579
+    second: Dragon Teleport Out Sheet_32
+  - first:
+      213: -5987190070419536620
+    second: Dragon Teleport Out Sheet_33
+  - first:
+      213: 413941126582931275
+    second: Dragon Teleport Out Sheet_34
+  - first:
+      213: -3302499818451703595
+    second: Dragon Teleport Out Sheet_35
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,7 +148,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -70,9 +178,189 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Dragon Teleport Out Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 255
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebac57daff5af562b92043b274f57e6a
+      internalID: -6323986479294386090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon Teleport Out Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 0
+        width: 235
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1154c5a5086f6e798990c5f19df1496
+      internalID: -1439728460061283167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon Teleport Out Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 0
+        width: 238
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ab1a21aae602bb5f96232ccc9837ab7
+      internalID: 2627426582426539854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon Teleport Out Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 753
+        y: 0
+        width: 245
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21391aa8af15fe146829f24970b3e06d
+      internalID: 7199417316255137700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon Teleport Out Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1002
+        y: 0
+        width: 255
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98d8a6af71e982f4193a5353cb310d13
+      internalID: -3715505024460904587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon Teleport Out Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1261
+        y: 0
+        width: 230
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac6d87f941b3ba49bb9281c07b694edb
+      internalID: 7041345900795738373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon Teleport Out Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 1496
+        y: 0
+        width: 251
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c50b878489c641951bcbf0ff66fe6cc4
+      internalID: 685494223051187847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dragon Teleport Out Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 1753
+        y: 0
+        width: 247
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fc41b1c0f88b3b32935159b1c62792c
+      internalID: -7857602759602404962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
