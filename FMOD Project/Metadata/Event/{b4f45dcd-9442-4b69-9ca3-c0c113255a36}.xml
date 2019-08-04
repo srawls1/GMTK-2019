@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="Event" id="{b4f45dcd-9442-4b69-9ca3-c0c113255a36}">
 		<property name="name">
-			<value>bullet_impact_bullet</value>
+			<value>boss_bullet_deflected</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>

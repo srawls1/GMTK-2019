@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="Event" id="{45253bbb-dc50-4293-bf19-9a96a16c2183}">
 		<property name="name">
-			<value>bullet_flight</value>
+			<value>boss_bullet_flight</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>

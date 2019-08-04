@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 6809344123329087241}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: -0.7, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.7, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -158,6 +158,7 @@ MonoBehaviour:
   teleportTime: 1
   teleportFrequency: 10
   missile: {fileID: 114735566724527206, guid: 7329510d527f4f74493040a002ca32e2, type: 3}
+  healthBar: {fileID: 0}
   health: 8
 --- !u!114 &6809344123329087475
 MonoBehaviour:

@@ -2,13 +2,13 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="Event" id="{f842f68f-38a6-45a1-a2ad-9dd159c9a990}">
 		<property name="name">
-			<value>bullet_impact_wall</value>
+			<value>player_bullet_bounce</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
 		</property>
 		<relationship name="folder">
-			<destination>{e9208144-2067-4dd7-aa7f-6ed2940ac5d7}</destination>
+			<destination>{2cb6ea4c-6564-406e-9bee-a57675833f47}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{be4932fe-ce82-48fa-9fea-1f0c37f0fb1d}</destination>
