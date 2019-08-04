@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{48912ed5-f401-4d00-8065-50696d61b333}">
+		<property name="assetPath">
+			<value>Narrow Bumpy Space.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.2848752834467121</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{08d6f545-e3c9-4a83-b004-a8822b99a4ff}</destination>
+		</relationship>
+	</object>
+</objects>

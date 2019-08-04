@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{edc5de82-9e6d-48a2-9a1f-6d3626b7bc58}">
+		<property name="assetPath">
+			<value>player_bullet_charge_vo.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.32127083333333334</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{08d6f545-e3c9-4a83-b004-a8822b99a4ff}</destination>
+		</relationship>
+	</object>
+</objects>
