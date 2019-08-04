@@ -6,9 +6,9 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PlayerWalkLeft
+  m_Name: BossBall
   serializedVersion: 6
-  m_Legacy: 0
+  m_Legacy: 1
   m_Compressed: 0
   m_UseHighQualityCurve: 1
   m_RotationCurves: []
@@ -20,10 +20,16 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 6656172897083101836, guid: fc548872ebb5ba32c9db84ba3168f345,
+      value: {fileID: -6887670995519713549, guid: 9d4129bdb33c686d393e68d4a824952f,
         type: 3}
     - time: 0.1
-      value: {fileID: -1782799392614166824, guid: fc548872ebb5ba32c9db84ba3168f345,
+      value: {fileID: -6652764463417752448, guid: 9d4129bdb33c686d393e68d4a824952f,
+        type: 3}
+    - time: 0.2
+      value: {fileID: 3539796604888646661, guid: 9d4129bdb33c686d393e68d4a824952f,
+        type: 3}
+    - time: 0.3
+      value: {fileID: 8962879895558769952, guid: 9d4129bdb33c686d393e68d4a824952f,
         type: 3}
     attribute: m_Sprite
     path: 
@@ -35,23 +41,14 @@ AnimationClip:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   m_ClipBindingConstant:
-    genericBindings:
-    - serializedVersion: 2
-      path: 0
-      attribute: 0
-      script: {fileID: 0}
-      typeID: 212
-      customType: 23
-      isPPtrCurve: 1
-    pptrCurveMapping:
-    - {fileID: 6656172897083101836, guid: fc548872ebb5ba32c9db84ba3168f345, type: 3}
-    - {fileID: -1782799392614166824, guid: fc548872ebb5ba32c9db84ba3168f345, type: 3}
+    genericBindings: []
+    pptrCurveMapping: []
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.2
+    m_StopTime: 0.4
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

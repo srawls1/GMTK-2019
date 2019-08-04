@@ -1,19 +1,22 @@
 fileFormatVersion: 2
-guid: 9d4129bdb33c686d393e68d4a824952f
+guid: fc548872ebb5ba32c9db84ba3168f345
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6887670995519713549
-    second: Projectile Dragon Sheet_0
+      213: -3096051688267853240
+    second: Protag New Walk Sheet_0
   - first:
-      213: -6652764463417752448
-    second: Projectile Dragon Sheet_1
+      213: 6031580906969005626
+    second: Protag New Walk Sheet_1
   - first:
-      213: 3539796604888646661
-    second: Projectile Dragon Sheet_2
+      213: 6656172897083101836
+    second: Protag New Walk Sheet_2
   - first:
-      213: 8962879895558769952
-    second: Projectile Dragon Sheet_3
+      213: -1782799392614166824
+    second: Protag New Walk Sheet_3
+  - first:
+      213: -3847185476390937501
+    second: Protag New Walk Sheet_4
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -98,13 +101,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Projectile Dragon Sheet_0
+      name: Protag New Walk Sheet_0
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 2
-        width: 97
-        height: 97
+        width: 141
+        height: 118
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,20 +115,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d7839df20c27529cb4247022e4d35be
-      internalID: -6887670995519713549
+      spriteID: 9861fa45e2ffb6166a25255aff179710
+      internalID: -3096051688267853240
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Projectile Dragon Sheet_1
+      name: Protag New Walk Sheet_1
       rect:
         serializedVersion: 2
-        x: 101
-        y: 2
-        width: 97
-        height: 97
+        x: 207
+        y: 1
+        width: 132
+        height: 119
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -133,20 +136,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d437f9a80296381a8a8e350244cd2d55
-      internalID: -6652764463417752448
+      spriteID: 7043e4d2f0c22e317bb82142340fe2ee
+      internalID: 6031580906969005626
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Projectile Dragon Sheet_2
+      name: Protag New Walk Sheet_2
       rect:
         serializedVersion: 2
-        x: 201
-        y: 2
-        width: 97
-        height: 97
+        x: 417
+        y: 3
+        width: 187
+        height: 117
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,20 +157,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a8c6a4257f66de9fa4c97128fc0a82e
-      internalID: 3539796604888646661
+      spriteID: d8f0c92b58fcc10b285a3e005b1e6d99
+      internalID: 6656172897083101836
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Projectile Dragon Sheet_3
+      name: Protag New Walk Sheet_3
       rect:
         serializedVersion: 2
-        x: 301
+        x: 622
         y: 2
-        width: 97
-        height: 97
+        width: 186
+        height: 116
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,8 +178,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 98b7b70f43f0bfdd892fe423525d1108
-      internalID: 8962879895558769952
+      spriteID: 565746bcb6be25d96b684808a94017ea
+      internalID: -1782799392614166824
       vertices: []
       indices: 
       edges: []

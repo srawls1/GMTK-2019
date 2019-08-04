@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 114735566724527206}
   - component: {fileID: 50028873268399752}
   - component: {fileID: 58908424600770874}
+  - component: {fileID: 946716311086704240}
   m_Layer: 0
   m_Name: HomingArrow
   m_TagString: Untagged
@@ -74,8 +75,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7f388ee98b0fbf84bb1eeeeaa3c64296, type: 3}
-  m_Color: {r: 0.013137988, g: 0.25816873, b: 0.5955882, a: 1}
+  m_Sprite: {fileID: -6887670995519713549, guid: 9d4129bdb33c686d393e68d4a824952f,
+    type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -93,7 +95,7 @@ TrailRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1253632515393646}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -154,7 +156,7 @@ TrailRenderer:
       m_RotationOrder: 0
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.011764706, g: 0.25882354, b: 0.59607846, a: 1}
+      key0: {r: 0.8867924, g: 0.12130654, b: 0.24960537, a: 1}
       key1: {r: 0.011764706, g: 0.25882354, b: 0.59607846, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -243,6 +245,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!111 &946716311086704240
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1253632515393646}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: 6c836aa4bf416704aa07f97e60b4f98a, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &4848056033909071894
 GameObject:
   m_ObjectHideFlags: 0

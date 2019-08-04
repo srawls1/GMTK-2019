@@ -30,8 +30,17 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.016666668
-        value: 0
+        time: 0.1
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.2
+        value: 1
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -48,12 +57,16 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: f1c51c318f53f6a7cb86d54e217d7f10, type: 3}
+      value: {fileID: 6656172897083101836, guid: fc548872ebb5ba32c9db84ba3168f345,
+        type: 3}
+    - time: 0.1
+      value: {fileID: -1782799392614166824, guid: fc548872ebb5ba32c9db84ba3168f345,
+        type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 60
+  m_SampleRate: 10
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -75,13 +88,14 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: f1c51c318f53f6a7cb86d54e217d7f10, type: 3}
+    - {fileID: 6656172897083101836, guid: fc548872ebb5ba32c9db84ba3168f345, type: 3}
+    - {fileID: -1782799392614166824, guid: fc548872ebb5ba32c9db84ba3168f345, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.016666668
+    m_StopTime: 0.2
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -110,8 +124,17 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.016666668
-        value: 0
+        time: 0.1
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.2
+        value: 1
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
