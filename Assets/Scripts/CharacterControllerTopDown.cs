@@ -9,6 +9,7 @@ public class CharacterControllerTopDown : MonoBehaviour
 {
 	[Header("Running")]
 	[SerializeField] private float maxSpeed;
+	[SerializeField] private float chargeSpeed;
 	[SerializeField] private float timeToFullSpeed;
 	[SerializeField] private float timeToStop;
 
@@ -219,15 +220,15 @@ public class CharacterControllerTopDown : MonoBehaviour
     }
 
     private void Move() {
+        float input_dx = Mathf.Round(Input.GetAxisRaw("Horizontal"));
+        float input_dy = Mathf.Round(Input.GetAxisRaw("Vertical"));
 		if (!Charging && !isChargingShot)
         {
-			float input_dx = Mathf.Round(Input.GetAxisRaw("Horizontal"));
-            float input_dy = Mathf.Round(Input.GetAxisRaw("Vertical"));
             rigidbody.velocity = new Vector2(Mathf.Lerp(0, input_dx * maxSpeed, 0.8f), Mathf.Lerp(0, input_dy * maxSpeed, 0.8f));
         }
         else if (isChargingShot)
         {
-            rigidbody.velocity = new Vector2(0, 0);
+            rigidbody.velocity = new Vector2(Mathf.Lerp(0, input_dx * chargeSpeed, 0.8f), Mathf.Lerp(0, input_dy * chargeSpeed, 0.8f));
         }
     }
 
