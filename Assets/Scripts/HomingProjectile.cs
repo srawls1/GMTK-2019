@@ -66,7 +66,7 @@ public class HomingProjectile : MonoBehaviour
 		}
 	}
 
-    //RuntimeManager.PlayOneshot("event:/boss/boss_bullet_deflected"); // TODO find how to trigger the bullets deflecting sound
+    //RuntimeManager.PlayOneShot("event:/boss/boss_bullet_deflected"); // TODO find how to trigger the bullets deflecting sound
 
     private bool hasDirectPath(Vector2 point)
 	{
