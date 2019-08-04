@@ -1506,6 +1506,12 @@ PrefabInstance:
       propertyPath: m_AngularDrag
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 212154379914245960, guid: 8fd0929fea4e03b46bbf6f7fa900c6c4,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 2469661183725967526, guid: 72bb24170fdc160ab8a99818043cc7f3,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fd0929fea4e03b46bbf6f7fa900c6c4, type: 3}
 --- !u!50 &1144226672 stripped
@@ -2234,6 +2240,22 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 465550655}
+    - target: {fileID: 6809344123329087246, guid: cb119080d254e424aa2b10a14e454526,
+        type: 3}
+      propertyPath: teleportInTime
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6809344123329087246, guid: cb119080d254e424aa2b10a14e454526,
+        type: 3}
+      propertyPath: teleportOutTime
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6809344123329087245, guid: cb119080d254e424aa2b10a14e454526,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -4282335067585508333, guid: 1d9bc2b0f635cbe78a700c8c89fdcf16,
+        type: 3}
     m_RemovedComponents:
     - {fileID: 6809344123329087475, guid: cb119080d254e424aa2b10a14e454526, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cb119080d254e424aa2b10a14e454526, type: 3}

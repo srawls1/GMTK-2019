@@ -15,7 +15,8 @@ public class Boss : MonoBehaviour
 
 	[Header("Teleporting")]
 	[SerializeField] private List<Transform> teleportPoints;
-	[SerializeField] private float teleportTime;
+	[SerializeField] private float teleportInTime;
+	[SerializeField] private float teleportOutTime;
 	[SerializeField] private float teleportFrequency;
 
     [Header("Items")]
@@ -73,8 +74,11 @@ public class Boss : MonoBehaviour
 	private IEnumerator Teleport()
 	{
 		// TODO - wait for disappear animation
+		animator.SetBool("isTeleingOut", true);
 		collider.enabled = false;
-		yield return new WaitForSeconds(teleportTime);
+		yield return new WaitForSeconds(teleportOutTime);
+		animator.SetBool("isTeleingOut", false);
+		animator.SetBool("isTeleingIn", true);
 		int newLocation = health > 3 ?
 			Random.Range(0, teleportPoints.Count - 2) :
 			teleportPoints.Count - 1;
@@ -83,6 +87,8 @@ public class Boss : MonoBehaviour
 		currentLocation = newLocation;
 		collider.enabled = true;
 		// TODO - wait for reappear animation
+		yield return new WaitForSeconds(teleportInTime);
+		animator.SetBool("isTeleingIn", false);
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
