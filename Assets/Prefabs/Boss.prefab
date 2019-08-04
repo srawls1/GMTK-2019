@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6809344123329087244}
   - component: {fileID: 6809344123329087247}
   - component: {fileID: 6809344123329087246}
-  - component: {fileID: 6809344124693684084}
+  - component: {fileID: 465550655}
   m_Layer: 9
   m_Name: Boss
   m_TagString: Untagged
@@ -73,7 +73,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7f388ee98b0fbf84bb1eeeeaa3c64296, type: 3}
+  m_Sprite: {fileID: -4282335067585508333, guid: 1d9bc2b0f635cbe78a700c8c89fdcf16,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -101,7 +102,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 2.33, y: 1.78}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -161,8 +162,8 @@ MonoBehaviour:
   missile: {fileID: 114735566724527206, guid: 7329510d527f4f74493040a002ca32e2, type: 3}
   healthBar: {fileID: 0}
   health: 8
-  animator: {fileID: 6809344124693684084}
---- !u!95 &6809344124693684084
+  animator: {fileID: 465550655}
+--- !u!95 &465550655
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0

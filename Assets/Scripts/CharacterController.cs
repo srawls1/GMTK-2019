@@ -357,6 +357,8 @@ public class CharacterController : MonoBehaviour
 			yield return null;
 		}
 		// set animation
+
+        animator.SetBool("Shooting", true);
 		//RuntimeManager.PlayOneShot("event:/player/player_shoot");
 
         Time.timeScale = 1f;

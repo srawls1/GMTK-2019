@@ -271,6 +271,7 @@ public class CharacterControllerTopDown : MonoBehaviour
 	private IEnumerator Shoot()
 	{
 		// Set animation
+        animator.SetBool("Shooting", true);
 		float chargeTime = 0f;
 		// is this by value or by reference
 		float current_width = laser.current_width;
@@ -289,6 +290,7 @@ public class CharacterControllerTopDown : MonoBehaviour
 			yield return null;
 		}
 		// set animation
+        animator.SetBool("Shooting", false);
 
         Time.timeScale = 1f;
 		isChargingShot = false;
