@@ -63,12 +63,14 @@ public class CharacterController : MonoBehaviour
 	
 	void Update()
 	{
+		if (!PauseMenu.GameIsPaused) {
 		UpdateIsOnGround();
 		CheckForJump();
 		CheckForDash();
 		CheckForDeflect();
 		CheckForShoot();
 		ApplyHorizontalAcceleration();
+		}
 	}
 
 	private void OnTriggerEnter2D(Collider2D collision)
