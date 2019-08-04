@@ -129,12 +129,12 @@ public class CharacterController : MonoBehaviour
 		}
 		
 	}
+
 	private void CheckForShoot()
 	{
-		//Debug.Log(Input.GetButton("Fire"));
-		if (hasBullet && Input.GetButtonUp("Fire"))
+		if (hasBullet && Input.GetButtonDown("Fire"))
 		{
-			Shoot();
+			StartCoroutine(Shoot());
 		}
 
 	}
@@ -273,8 +273,17 @@ public class CharacterController : MonoBehaviour
 		}
 	}
 
-	private void Shoot()
+	private IEnumerator Shoot()
 	{
+		// Set animation
+		float chargeTime = 0f;
+		while (Input.GetButton("Fire"))
+		{
+			chargeTime += Time.deltaTime;
+			yield return null;
+		}
+		// set animation
+
 		hasBullet = false;
 		timeShotBullet = Time.time;
 		Vector2 start = transform.position;
@@ -284,6 +293,6 @@ public class CharacterController : MonoBehaviour
 		float rotZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 		PlayerBullet b = Instantiate(bulletPreFab, start, Quaternion.Euler(0, 0, rotZ)) as PlayerBullet;
 		b.objToReturnTo = gameObject;
-		//b.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
+		b.chargeTime = chargeTime;
 	}
 }

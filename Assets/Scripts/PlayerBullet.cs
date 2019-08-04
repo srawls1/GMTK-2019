@@ -6,10 +6,13 @@ using UnityEngine;
 public class PlayerBullet : MonoBehaviour
 {
 	[SerializeField] private float maxSpeed;
+	[SerializeField] private float maxEffectiveChargeTime;
+	[SerializeField] private float chargeTimeScale;
 	[SerializeField] private float timeBeforeStartReturning;
 	[SerializeField] private float returnForce;
 
 	public GameObject objToReturnTo;
+	public float chargeTime;
 
 	private new Rigidbody2D rigidbody;
 	private Vector2 velocity;
@@ -23,9 +26,19 @@ public class PlayerBullet : MonoBehaviour
 	private void Awake()
 	{
 		rigidbody = GetComponent<Rigidbody2D>();
-		velocity = transform.right * maxSpeed;
-		rigidbody.velocity = velocity;
 		shotTime = Time.time;
+	}
+	private IEnumerator Start()
+	{
+		yield return null;
+		Debug.Log(chargeTime);
+		chargeTime = Mathf.Min(chargeTime, maxEffectiveChargeTime);
+		Debug.Log(chargeTime);
+		maxSpeed += chargeTimeScale * chargeTime;
+		Debug.Log(maxSpeed);
+		velocity = transform.right * maxSpeed;
+		Debug.Log(velocity);
+		rigidbody.velocity = velocity;
 	}
 
 	void Update()

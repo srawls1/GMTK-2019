@@ -67,11 +67,11 @@ public class Boss : MonoBehaviour
 		yield return new WaitForSeconds(teleportTime);
 		int newLocation = health > 3 ?
 			Random.Range(0, teleportPoints.Count - 2) :
-			Random.Range(teleportPoints.Count - 2, teleportPoints.Count);
+			teleportPoints.Count - 1;
 		transform.position = teleportPoints[newLocation].position;
 		currentLocation = newLocation;
 		collider.enabled = true;
-		// TODO - wait for reapper animation
+		// TODO - wait for reappear animation
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
