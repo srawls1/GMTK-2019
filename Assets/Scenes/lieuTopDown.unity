@@ -1379,6 +1379,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3336880898745381911, guid: 8fd0929fea4e03b46bbf6f7fa900c6c4,
+        type: 3}
+      propertyPath: laser
+      value: 
+      objectReference: {fileID: 802188329}
     - target: {fileID: 1703181823350818, guid: 8fd0929fea4e03b46bbf6f7fa900c6c4, type: 3}
       propertyPath: m_Name
       value: Character
@@ -1481,11 +1486,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6249920166147536914, guid: ebc3e20a9b5e840ea95cc79b2953403b,
         type: 3}
-    - target: {fileID: 95590110671199336, guid: 8fd0929fea4e03b46bbf6f7fa900c6c4,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: bcb7e2b9448deab4caa6934a5f2c1c11, type: 2}
     - target: {fileID: 50371170301181444, guid: 8fd0929fea4e03b46bbf6f7fa900c6c4,
         type: 3}
       propertyPath: m_LinearDrag
@@ -1512,6 +1512,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2469661183725967526, guid: 72bb24170fdc160ab8a99818043cc7f3,
         type: 3}
+    - target: {fileID: 95590110671199336, guid: 8fd0929fea4e03b46bbf6f7fa900c6c4,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: bcb7e2b9448deab4caa6934a5f2c1c11, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fd0929fea4e03b46bbf6f7fa900c6c4, type: 3}
 --- !u!50 &1144226672 stripped
@@ -1812,45 +1817,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1924573561 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1703181823350818, guid: 8fd0929fea4e03b46bbf6f7fa900c6c4,
-    type: 3}
-  m_PrefabInstance: {fileID: 1011367938}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1924573562
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1924573561}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1225036cd2b52694dad7a89183596e3c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxSpeed: 3
-  chargeSpeed: 1.5
-  timeToFullSpeed: 0.2
-  timeToStop: 0.1
-  jumpHeight: 4
-  variableHangTime: 0
-  coyoteTime: 0.2
-  inputQueueTime: 0.2
-  dashSpeed: 25
-  dashControlLossDuration: 0.05
-  dashDuration: 0.3
-  pauseDuration: 0.1
-  dashCooldownTime: 1
-  deflectRadius: 1
-  deflectSlowdownTime: 0.6
-  deflectRecoilSpeed: 3
-  bulletPreFab: {fileID: 1024000233231160005, guid: 78e0f792f50e961d4b7041c1429915b8,
-    type: 3}
-  laser: {fileID: 802188329}
-  timeBeforeBulletPickup: 0.1
-  spawnDistance: 0.5
 --- !u!1001 &2134347191
 PrefabInstance:
   m_ObjectHideFlags: 0

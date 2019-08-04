@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6809344123329087244}
   - component: {fileID: 6809344123329087247}
   - component: {fileID: 6809344123329087246}
-  - component: {fileID: 6809344123329087475}
+  - component: {fileID: 6809344124693684084}
   m_Layer: 9
   m_Name: Boss
   m_TagString: Untagged
@@ -155,20 +155,29 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  teleportTime: 1
+  teleportInTime: 0.8
+  teleportOutTime: 0.8
   teleportFrequency: 10
   missile: {fileID: 114735566724527206, guid: 7329510d527f4f74493040a002ca32e2, type: 3}
+  healthBar: {fileID: 0}
   health: 8
---- !u!114 &6809344123329087475
-MonoBehaviour:
+  animator: {fileID: 6809344124693684084}
+--- !u!95 &6809344124693684084
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6809344123329087241}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf78617bf0bf2437e880c6712ad73258, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_navTerrainType: 8
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6039facd38bc9b07c95dc76439168527, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
