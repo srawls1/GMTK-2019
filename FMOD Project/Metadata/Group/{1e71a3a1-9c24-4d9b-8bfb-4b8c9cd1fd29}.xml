@@ -4,6 +4,9 @@
 		<property name="name">
 			<value>System Group</value>
 		</property>
+		<relationship name="masters">
+			<destination>{14e3e00c-397e-4356-ab64-057d8d10f274}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{32ba4b19-8511-4a1d-997a-fbab69d8fe7f}</destination>
 		</relationship>
@@ -17,8 +20,20 @@
 	<object class="MixerBusEffectChain" id="{32ba4b19-8511-4a1d-997a-fbab69d8fe7f}">
 		<relationship name="effects">
 			<destination>{b201571a-b48b-4f1a-bbdd-16069ead3092}</destination>
+			<destination>{21d58562-efd1-48a6-bed5-a9b6a0212cbe}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{ad922c8f-9f89-42bf-af8c-1ac6f22016ca}" />
 	<object class="MixerBusFader" id="{b201571a-b48b-4f1a-bbdd-16069ead3092}" />
+	<object class="MixerSend" id="{21d58562-efd1-48a6-bed5-a9b6a0212cbe}">
+		<property name="level">
+			<value>-18</value>
+		</property>
+		<property name="inputFormat">
+			<value>1</value>
+		</property>
+		<relationship name="mixerReturn">
+			<destination>{5dd75364-6ae0-460c-9ff9-fc3cf7f03acf}</destination>
+		</relationship>
+	</object>
 </objects>

@@ -113,7 +113,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 1330
+  Length: 1393
 --- !u!114 &-7273830653496697886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,11 +132,11 @@ MonoBehaviour:
   - {fileID: 4381867938655466163}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 1330
+  Length: 1362
 --- !u!114 &-7218633811499678401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,6 +183,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1330
+--- !u!114 &-6209783769722703009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: song_intensity
+  m_EditorClassIdentifier: 
+  Name: song_intensity
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 1
 --- !u!114 &-6059800561690566276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,8 +260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/music
   guid: 2e2b2a23a383a4408c3fb24ed89361d1
-  Banks:
-  - {fileID: 4381867938655466163}
+  Banks: []
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -274,7 +290,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 1330
+  Length: 1376
 --- !u!114 &-5765269483815469263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -297,7 +313,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 1330
+  Length: 1467
 --- !u!114 &-5374485324126099774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -355,6 +371,23 @@ MonoBehaviour:
   Max: 3
   Default: 0
   Exists: 1
+--- !u!114 &-4662278188769507736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: song_intensity
+  m_EditorClassIdentifier: 
+  Name: song_intensity
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
 --- !u!114 &-4598510941850873571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -485,6 +518,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1330
+--- !u!114 &-2110810647039742035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: distance_to_player
+  m_EditorClassIdentifier: 
+  Name: distance_to_player
+  Min: 0
+  Max: 100
+  Default: 100
+  Exists: 0
 --- !u!114 &-1879476869700289443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -502,6 +552,23 @@ MonoBehaviour:
   Max: 100
   Default: 100
   Exists: 1
+--- !u!114 &-1760877591688974922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: song_section
+  m_EditorClassIdentifier: 
+  Name: song_section
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -520,12 +587,10 @@ MonoBehaviour:
   EditorEvents:
   - {fileID: 6578479857758467342}
   - {fileID: -6059800561690566276}
-  - {fileID: 1268997647013208100}
   - {fileID: -7218633811499678401}
   - {fileID: -7649052490759257486}
   - {fileID: 912144821699500260}
   - {fileID: 7388791112035497831}
-  - {fileID: 2803005850598277649}
   - {fileID: 5646246765984201333}
   - {fileID: -5374485324126099774}
   - {fileID: -5846705269886797925}
@@ -534,17 +599,17 @@ MonoBehaviour:
   - {fileID: -2202950851687580700}
   - {fileID: -5765269483815469263}
   - {fileID: 4895159644644910221}
-  - {fileID: -5919150016643532667}
   - {fileID: 8296884902084722019}
+  - {fileID: 3311273229757546740}
   EditorParameters:
-  - {fileID: 229414263694716983}
-  - {fileID: -2548605469481573504}
-  - {fileID: 5458429081349671062}
+  - {fileID: -6209783769722703009}
+  - {fileID: 8508101704926132656}
+  - {fileID: 6069103779733119067}
   MasterBanks:
   - {fileID: 4381867938655466163}
   StringsBanks:
   - {fileID: 4031865108639934401}
-  stringsBankWriteTime: 637005558588528660
+  stringsBankWriteTime: 637005660310556775
   cacheVersion: 3
 --- !u!114 &229414263694716983
 MonoBehaviour:
@@ -668,8 +733,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/player/player_jump_land
   guid: 6b0ded585b065c48a218cee0980269d8
-  Banks:
-  - {fileID: 4381867938655466163}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -776,8 +840,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/player/player_bullet_bounce
   guid: 8ff642f8a638a145a2ad9dd159c9a990
-  Banks:
-  - {fileID: 4381867938655466163}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -785,6 +848,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1330
+--- !u!114 &3311273229757546740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/song
+  m_EditorClassIdentifier: 
+  Path: event:/song
+  guid: 2e2b2a23a383a4408c3fb24ed89361d1
+  Banks:
+  - {fileID: 4381867938655466163}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 136888
 --- !u!114 &4031865108639934401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -799,11 +885,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: H:/GMTK-2019/FMOD Project/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637005558588528660
+  lastModified: 637005660310556775
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1858
+    Value: 1944
   Exists: 1
 --- !u!114 &4381867938655466163
 MonoBehaviour:
@@ -819,11 +905,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: H:/GMTK-2019/FMOD Project/Build/Desktop/Master.bank
   SubDir: 
-  lastModified: 637005558588289319
+  lastModified: 637005660309988301
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 6140448
+    Value: 13804128
   Exists: 1
 --- !u!114 &4895159644644910221
 MonoBehaviour:
@@ -847,7 +933,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 1330
+  Length: 1393
 --- !u!114 &5458429081349671062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -887,7 +973,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 0
+  Length: 1330
 --- !u!114 &5858945483344061499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -960,6 +1046,23 @@ MonoBehaviour:
   Name: intensity
   Min: 0
   Max: 3
+  Default: 0
+  Exists: 1
+--- !u!114 &6069103779733119067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: song_section
+  m_EditorClassIdentifier: 
+  Name: song_section
+  Min: 0
+  Max: 4
   Default: 0
   Exists: 1
 --- !u!114 &6578479857758467342
@@ -1111,3 +1214,20 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1330
+--- !u!114 &8508101704926132656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: distance_to_player
+  m_EditorClassIdentifier: 
+  Name: distance_to_player
+  Min: 0
+  Max: 100
+  Default: 100
+  Exists: 1

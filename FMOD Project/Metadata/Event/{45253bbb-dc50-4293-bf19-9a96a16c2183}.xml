@@ -130,10 +130,13 @@
 			<destination>{500b6c79-e007-4c97-87e6-7f500337198f}</destination>
 		</relationship>
 		<relationship name="sounds">
-			<destination>{a32a24bd-9d26-47c3-a0c1-fbff053cf5bf}</destination>
+			<destination>{ac5b6b69-b74f-4a9f-bd7f-a70029814cf9}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{9d5f259d-f6e9-4a71-8370-66151586694f}">
+		<property name="volume">
+			<value>-2</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -308,9 +311,9 @@
 			<value>14.583333</value>
 		</property>
 	</object>
-	<object class="SingleSound" id="{a32a24bd-9d26-47c3-a0c1-fbff053cf5bf}">
+	<object class="SingleSound" id="{ac5b6b69-b74f-4a9f-bd7f-a70029814cf9}">
 		<relationship name="audioFile">
-			<destination>{6b9d5c55-62d0-4829-9f0f-5d24ec2e0b99}</destination>
+			<destination>{12b25f61-7756-41fa-84d5-b35fc614286b}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{4214d03d-1b8d-4af1-9d74-fea7405dd25e}">
@@ -401,7 +404,7 @@
 			<value>100</value>
 		</property>
 		<property name="value">
-			<value>0</value>
+			<value>-5.30000067</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{fd32efc4-ebf4-45e5-b3fc-30ddde10c3f3}">
@@ -409,7 +412,7 @@
 			<value>0</value>
 		</property>
 		<property name="value">
-			<value>12</value>
+			<value>6.69999933</value>
 		</property>
 		<property name="curveShape">
 			<value>-0.307092309</value>

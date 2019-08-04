@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{537ed0bf-3468-4631-a2a3-c2d76538b446}">
+		<property name="assetPath">
+			<value>boss_bullet_deflected.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.74302083333333335</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{08d6f545-e3c9-4a83-b004-a8822b99a4ff}</destination>
+		</relationship>
+	</object>
+</objects>

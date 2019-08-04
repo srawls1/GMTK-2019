@@ -4,6 +4,9 @@
 		<property name="name">
 			<value>Player Group</value>
 		</property>
+		<relationship name="masters">
+			<destination>{14e3e00c-397e-4356-ab64-057d8d10f274}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{1ddeb820-b312-4fe6-9fdb-33ef93f429ae}</destination>
 		</relationship>
@@ -17,8 +20,20 @@
 	<object class="MixerBusEffectChain" id="{1ddeb820-b312-4fe6-9fdb-33ef93f429ae}">
 		<relationship name="effects">
 			<destination>{9a2adf38-5f86-411f-8267-7974ff0d07dd}</destination>
+			<destination>{f5e006a4-a1b5-46d4-aa93-790baf2b4a39}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{dc535499-e972-4476-b5ae-826635111eb3}" />
 	<object class="MixerBusFader" id="{9a2adf38-5f86-411f-8267-7974ff0d07dd}" />
+	<object class="MixerSend" id="{f5e006a4-a1b5-46d4-aa93-790baf2b4a39}">
+		<property name="level">
+			<value>-18</value>
+		</property>
+		<property name="inputFormat">
+			<value>1</value>
+		</property>
+		<relationship name="mixerReturn">
+			<destination>{5dd75364-6ae0-460c-9ff9-fc3cf7f03acf}</destination>
+		</relationship>
+	</object>
 </objects>
