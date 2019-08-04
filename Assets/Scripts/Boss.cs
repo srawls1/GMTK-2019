@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using FMODUnity;
-using FMOD.Studio;
+//using FMODUnity;
+//using FMOD.Studio;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class Boss : MonoBehaviour
@@ -74,7 +74,7 @@ public class Boss : MonoBehaviour
 			Random.Range(0, teleportPoints.Count - 2) :
 			teleportPoints.Count - 1;
 		transform.position = teleportPoints[newLocation].position;
-        RuntimeManager.PlayOneShot("event:/boss/boss_teleport");
+        //RuntimeManager.PlayOneShot("event:/boss/boss_teleport");
 		currentLocation = newLocation;
 		collider.enabled = true;
 		// TODO - wait for reappear animation
@@ -147,7 +147,7 @@ public class Boss : MonoBehaviour
 		Debug.Log("Boss took damage: " + damage);
         health -= damage;
         // TODO: probably play some damage animation here
-        RuntimeManager.PlayOneShot("event:/boss/boss_damaged");
+        //RuntimeManager.PlayOneShot("event:/boss/boss_damaged");
         if (health <= 0) {
             die();
         }

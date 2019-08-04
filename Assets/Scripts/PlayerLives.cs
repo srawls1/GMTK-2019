@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using FMODUnity;
+//using FMODUnity;
 
 public class PlayerLives : MonoBehaviour
 {
@@ -31,7 +31,7 @@ public class PlayerLives : MonoBehaviour
         if (homingprojectile != null && !homingprojectile.deflecting) {
             Debug.Log("Lost 1 health");
             current_health -= 1;
-            RuntimeManager.PlayOneShot("event:/player/player_damaged");
+            //RuntimeManager.PlayOneShot("event:/player/player_damaged");
             Destroy(other.gameObject);
 			if (current_health == 0)
 			{

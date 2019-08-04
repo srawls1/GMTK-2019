@@ -2,8 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using FMODUnity;
-using FMOD.Studio;
+//using FMODUnity;
+//using FMOD.Studio;
 
 [RequireComponent(typeof(Rigidbody2D)), RequireComponent(typeof(Animator))]
 public class CharacterController : MonoBehaviour
@@ -82,7 +82,7 @@ public class CharacterController : MonoBehaviour
 		{
 			Destroy(bullet.gameObject);
 			hasBullet = true;
-            RuntimeManager.PlayOneShot("event:/player/player_bullet_collect");
+            //RuntimeManager.PlayOneShot("event:/player/player_bullet_collect");
             return;
 		}
 	}
@@ -122,7 +122,7 @@ public class CharacterController : MonoBehaviour
 
 				projectile.GetDeflected(direction);
 				rigidbody.velocity = -direction.normalized * deflectSlowdownTime;
-                RuntimeManager.PlayOneShot("event:/player/player_deflect");
+                //RuntimeManager.PlayOneShot("event:/player/player_deflect");
             }
 		}
 	}
@@ -183,7 +183,7 @@ public class CharacterController : MonoBehaviour
 		rigidbody.velocity = velocity;
 		Charging = true;
         animator.SetBool("Charging", true);
-        RuntimeManager.PlayOneShot("event:/Player/player_dash");
+        //RuntimeManager.PlayOneShot("event:/Player/player_dash");
 
         for (float timePassed = 0f; timePassed < dashControlLossDuration; timePassed += Time.deltaTime)
 		{
@@ -204,7 +204,7 @@ public class CharacterController : MonoBehaviour
 
 		Charging = false;
 		animator.SetBool("Charging", false);
-        RuntimeManager.PlayOneShot("event:/Player/player_dash_recover");
+        //RuntimeManager.PlayOneShot("event:/Player/player_dash_recover");
     }
 
 	private void ApplyHorizontalAcceleration()
@@ -265,7 +265,7 @@ public class CharacterController : MonoBehaviour
 		velocity.y = jumpSpeed;
 		rigidbody.velocity = velocity;
         animator.SetTrigger("Jump");
-        RuntimeManager.PlayOneShot("event:/Player/player_jump");
+        //RuntimeManager.PlayOneShot("event:/Player/player_jump");
         // RuntimeManager.PlayOneShot("event:/Player/player_jump_land"); //TODO find where to trigger the landing sound
     }
 
@@ -311,10 +311,10 @@ public class CharacterController : MonoBehaviour
 			yield return null;
 		}
         // set animation
-        RuntimeManager.PlayOneShot("event:/player/player_shoot");
+        //RuntimeManager.PlayOneShot("event:/player/player_shoot");
 
         isChargingShot = false;
-        //player_bullet_charge_sound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        //player_bullet_charge_sound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT); // Stops charging sound, doesnt work and I don't know why
 
         hasBullet = false;
 		laser.updateLineWidth(current_width);
