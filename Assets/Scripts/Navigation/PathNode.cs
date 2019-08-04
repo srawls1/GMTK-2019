@@ -116,15 +116,23 @@ public class NodePool
 			int normalizedX = node.rowColCode % width;
 			int normalizedY = node.rowColCode / width;
 
-			if (normalizedX > 0) yield return GetAt(new Vector2(node.position.x - dist, node.position.y));
-			if (normalizedY > 0) yield return GetAt(new Vector2(node.position.x, node.position.y - dist));
-			if (normalizedX < width) yield return GetAt(new Vector2(node.position.x + dist, node.position.y));
-			if (normalizedY < height) yield return GetAt(new Vector2(node.position.x, node.position.y + dist));
-			if (normalizedX > 0 && normalizedY > 0) yield return GetAt(new Vector2(node.position.x - dist, node.position.y - dist));
-			if (normalizedX < width && normalizedY > 0) yield return GetAt(new Vector2(node.position.x + dist, node.position.y - dist));
-			if (normalizedY > 0 && normalizedY < height) yield return GetAt(new Vector2(node.position.x - dist, node.position.y + dist));
-			if (normalizedY < width && normalizedY < height) yield return GetAt(new Vector2(node.position.x + dist, node.position.y + dist));
+			if (normalizedX > 0 /*&& DirectPath(node, normalizedX - 1, normalizedY)*/) yield return GetAt(new Vector2(node.position.x - dist, node.position.y));
+			if (normalizedY > 0 /*&& DirectPath(node, normalizedX, normalizedY - 1)*/) yield return GetAt(new Vector2(node.position.x, node.position.y - dist));
+			if (normalizedX < width /*&& DirectPath(node, normalizedX + 1, normalizedY)*/) yield return GetAt(new Vector2(node.position.x + dist, node.position.y));
+			if (normalizedY < height /*&& DirectPath(node, normalizedX, normalizedY + 1)*/) yield return GetAt(new Vector2(node.position.x, node.position.y + dist));
+			//if (normalizedX > 0 && normalizedY > 0 && DirectPath(node, normalizedX - 1, normalizedY - 1)) yield return GetAt(new Vector2(node.position.x - dist, node.position.y - dist));
+			//if (normalizedX < width && normalizedY > 0 && DirectPath(node, normalizedX + 1, normalizedY - 1)) yield return GetAt(new Vector2(node.position.x + dist, node.position.y - dist));
+			//if (normalizedY > 0 && normalizedY < height && DirectPath(node, normalizedX - 1, normalizedY + 1)) yield return GetAt(new Vector2(node.position.x - dist, node.position.y + dist));
+			//if (normalizedY < width && normalizedY < height && DirectPath(node, normalizedX + 1, normalizedY + 1)) yield return GetAt(new Vector2(node.position.x + dist, node.position.y + dist));
 		}
+	}
+
+	private bool DirectPath(PathNode node, int x, int y)
+	{
+		Vector2 end = new Vector2(x * dist + xOffset, y * dist + yOffset);
+		return Mathf.Approximately(end.x, node.position.x) || Mathf.Approximately(end.y, node.position.y);
+		RaycastHit2D hit = Physics2D.Raycast(node.position, end - node.position, Vector2.Distance(node.position, end));
+		return hit.collider == null;
 	}
 
 	private Collider2D[] overlapCheckBuffer = new Collider2D[8];
