@@ -1475,6 +1475,12 @@ PrefabInstance:
       propertyPath: maxSpeed
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 114103423078676894, guid: 8fd0929fea4e03b46bbf6f7fa900c6c4,
+        type: 3}
+      propertyPath: bulletPreFab
+      value: 
+      objectReference: {fileID: 6249920166147536914, guid: ebc3e20a9b5e840ea95cc79b2953403b,
+        type: 3}
     - target: {fileID: 95590110671199336, guid: 8fd0929fea4e03b46bbf6f7fa900c6c4,
         type: 3}
       propertyPath: m_Controller
@@ -1834,7 +1840,7 @@ MonoBehaviour:
   deflectRadius: 1
   deflectSlowdownTime: 0.6
   deflectRecoilSpeed: 3
-  bulletPreFab: {fileID: 6249920166147536914, guid: ebc3e20a9b5e840ea95cc79b2953403b,
+  bulletPreFab: {fileID: 1024000233231160005, guid: 78e0f792f50e961d4b7041c1429915b8,
     type: 3}
   laser: {fileID: 802188329}
   timeBeforeBulletPickup: 0.1
