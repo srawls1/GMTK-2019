@@ -31,6 +31,10 @@ public class HomingProjectile : MonoBehaviour
 
 	void Update()
 	{
+		if (Input.GetKeyDown(KeyCode.F))
+		{
+			PrintPath(path);
+		}
 		if (!deflecting)
 		{
 			if (hasDirectPath(playerCharacter.transform.position))
