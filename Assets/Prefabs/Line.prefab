@@ -141,5 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnDistance: 0.5
+  laserLength: 5
   lineRenderer: {fileID: 7856667989166934207}
   character: {fileID: 0}
+  current_width: 0

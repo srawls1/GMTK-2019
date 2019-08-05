@@ -45,6 +45,8 @@ GameObject:
   - component: {fileID: 50371170301181444}
   - component: {fileID: 114103423078676894}
   - component: {fileID: 8939100120241667383}
+  - component: {fileID: 1924573562}
+  - component: {fileID: 3336880898745381911}
   m_Layer: 9
   m_Name: Character
   m_TagString: Untagged
@@ -61,7 +63,7 @@ Transform:
   m_GameObject: {fileID: 1703181823350818}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.5, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 1716619852}
   m_Father: {fileID: 0}
@@ -105,7 +107,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a54e9bd81049df14991e1f72f90b47cc, type: 3}
+  m_Sprite: {fileID: 2469661183725967526, guid: 72bb24170fdc160ab8a99818043cc7f3,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -133,7 +136,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.31, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -152,7 +155,7 @@ Animator:
   m_GameObject: {fileID: 1703181823350818}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bcb7e2b9448deab4caa6934a5f2c1c11, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -175,7 +178,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 10
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 2
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -201,8 +204,8 @@ MonoBehaviour:
   variableHangTime: 0
   coyoteTime: 0.2
   inputQueueTime: 0.2
-  dashSpeed: 12
-  dashControlLossDuration: 0.1
+  dashSpeed: 8
+  dashControlLossDuration: 0.05
   dashDuration: 0.2
   pauseDuration: 0.1
   dashCooldownTime: 1
@@ -228,3 +231,69 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseMaxHealth: 5
   healthBar: {fileID: 0}
+--- !u!114 &1924573562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1703181823350818}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1225036cd2b52694dad7a89183596e3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 2
+  chargeSpeed: 0
+  timeToFullSpeed: 0.2
+  timeToStop: 0.1
+  jumpHeight: 4
+  variableHangTime: 0
+  coyoteTime: 0.2
+  inputQueueTime: 0.2
+  dashSpeed: 25
+  dashControlLossDuration: 0.05
+  dashDuration: 0.3
+  pauseDuration: 0.1
+  dashCooldownTime: 1
+  deflectRadius: 1
+  deflectSlowdownTime: 0.6
+  deflectRecoilSpeed: 3
+  bulletPreFab: {fileID: 6249920166147536914, guid: ebc3e20a9b5e840ea95cc79b2953403b,
+    type: 3}
+  laser: {fileID: 0}
+  timeBeforeBulletPickup: 0.1
+  spawnDistance: 0.5
+--- !u!114 &3336880898745381911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1703181823350818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1225036cd2b52694dad7a89183596e3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 3
+  chargeSpeed: 1.5
+  timeToFullSpeed: 0.2
+  timeToStop: 0.1
+  jumpHeight: 4
+  variableHangTime: 0
+  coyoteTime: 0.2
+  inputQueueTime: 0.2
+  dashSpeed: 25
+  dashControlLossDuration: 0.05
+  dashDuration: 0.3
+  pauseDuration: 0.1
+  dashCooldownTime: 1
+  deflectRadius: 1
+  deflectSlowdownTime: 0.6
+  deflectRecoilSpeed: 3
+  bulletPreFab: {fileID: 1024000233231160005, guid: 78e0f792f50e961d4b7041c1429915b8,
+    type: 3}
+  laser: {fileID: 0}
+  timeBeforeBulletPickup: 0.1
+  spawnDistance: 0.5

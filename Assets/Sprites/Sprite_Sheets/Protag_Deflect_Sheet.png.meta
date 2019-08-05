@@ -1,7 +1,34 @@
 fileFormatVersion: 2
 guid: 0a536a093b22e42e8a07a2a3356049c1
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -4383267018889605793
+    second: Protag_Deflect_Sheet_0
+  - first:
+      213: -6322438494801569635
+    second: Protag_Deflect_Sheet_1
+  - first:
+      213: -805566482104221417
+    second: Protag_Deflect_Sheet_2
+  - first:
+      213: -8661881412792459690
+    second: Protag_Deflect_Sheet_3
+  - first:
+      213: 1981674417567127944
+    second: Protag_Deflect_Sheet_4
+  - first:
+      213: -1757547638575060526
+    second: Protag_Deflect_Sheet_5
+  - first:
+      213: -7490312730185189073
+    second: Protag_Deflect_Sheet_6
+  - first:
+      213: 8844081716387707407
+    second: Protag_Deflect_Sheet_7
+  - first:
+      213: -2484960915791148049
+    second: Protag_Deflect_Sheet_8
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -31,7 +58,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -40,7 +67,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -63,7 +90,19 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -72,7 +111,196 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Protag_Deflect_Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 13
+        width: 114
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 579b7878517ff63fcb51cf11314a59cd
+      internalID: -4383267018889605793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protag_Deflect_Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 14
+        width: 115
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e2e3666366683aedafd89b11355c5a6
+      internalID: -6322438494801569635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protag_Deflect_Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 14
+        width: 117
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 556e1531221937a36b24dc7e3a670bf6
+      internalID: -805566482104221417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protag_Deflect_Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 15
+        width: 112
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e465f43f483331552a31648d7a36fa43
+      internalID: -8661881412792459690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protag_Deflect_Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 14
+        width: 141
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5ebbddb675389174a5eda99def1056d
+      internalID: 1981674417567127944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protag_Deflect_Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 988
+        y: 18
+        width: 153
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3124916b322ea960193a8e0f6956116a
+      internalID: -1757547638575060526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protag_Deflect_Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 1210
+        y: 13
+        width: 114
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d92a46ad808ce3b05921b7eb9ddeb639
+      internalID: -7490312730185189073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protag_Deflect_Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 1303
+        y: 83
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 365c4ec6f7e37619cbf78e7fdb1412b3
+      internalID: 8844081716387707407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protag_Deflect_Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 31
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76454a17ae80899dab9993d6941142c5
+      internalID: -2484960915791148049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

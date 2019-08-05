@@ -346,6 +346,7 @@ public class CharacterController : MonoBehaviour
 		while (Input.GetButton("Fire"))
 		{
 			isChargingShot = true;
+            Time.timeScale = 0.3f;
 			chargeTime += Time.deltaTime;
 			//todo
 			if (chargeTime < bulletPreFab.maxChargeTime)
@@ -359,6 +360,10 @@ public class CharacterController : MonoBehaviour
 		// set animation
 		RuntimeManager.PlayOneShot("event:/player/player_shoot");
 
+        animator.SetBool("Shooting", true);
+		//RuntimeManager.PlayOneShot("event:/player/player_shoot");
+
+        Time.timeScale = 1f;
 		isChargingShot = false;
 		player_bullet_charge_sound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT); // Stops charging sound, doesnt work and I don't know why
 
@@ -373,5 +378,6 @@ public class CharacterController : MonoBehaviour
 		PlayerBullet b = Instantiate(bulletPreFab, start, Quaternion.Euler(0, 0, rotZ)) as PlayerBullet;
 		b.objToReturnTo = gameObject;
 		b.chargeTime = chargeTime;
+        animator.SetBool("Shooting", false);
 	}
 }

@@ -76,8 +76,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7f388ee98b0fbf84bb1eeeeaa3c64296, type: 3}
-  m_Color: {r: 0.013137988, g: 0.25816873, b: 0.5955882, a: 1}
+  m_Sprite: {fileID: -6887670995519713549, guid: 9d4129bdb33c686d393e68d4a824952f,
+    type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -95,7 +96,7 @@ TrailRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1253632515393646}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -156,7 +157,7 @@ TrailRenderer:
       m_RotationOrder: 0
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.011764706, g: 0.25882354, b: 0.59607846, a: 1}
+      key0: {r: 0.8867924, g: 0.12130654, b: 0.24960537, a: 1}
       key1: {r: 0.011764706, g: 0.25882354, b: 0.59607846, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -202,8 +203,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1988e90fa98f3fa4f8a12cb1b3d0936e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   baseMaxSpeed: 5
   forceTowardPlayer: 5
   speedUpStep: 2
@@ -247,42 +248,58 @@ CircleCollider2D:
   m_Radius: 0.5
 --- !u!114 &8995781744316574266
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1253632515393646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/boss/boss_bullet_flight
-  PlayEvent: 0
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
+    m_ObjectHideFlags: 0
+    m_CorrespondingSourceObject: {fileID: 0}
+    m_PrefabInstance: {fileID: 0}
+    m_PrefabAsset: {fileID: 0}
+    m_GameObject: {fileID: 1253632515393646}
+    m_Enabled: 1
+    m_EditorHideFlags: 0
+    m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+    m_Name:
+    m_EditorClassIdentifier:
+    CollisionTag:
+    Event: event:/boss/boss_bullet_flight
+    PlayEvent: 0
+    StopEvent: 0
+    AllowFadeout: 1
+    TriggerOnce: 0
+    Preload: 0
+    Params: []
+    OverrideAttenuation: 0
+    OverrideMinDistance: 0
+    OverrideMaxDistance: 0
 --- !u!114 &-8306757206505636420
 MonoBehaviour:
+    m_ObjectHideFlags: 0
+    m_CorrespondingSourceObject: {fileID: 0}
+    m_PrefabInstance: {fileID: 0}
+    m_PrefabAsset: {fileID: 0}
+    m_GameObject: {fileID: 1253632515393646}
+    m_Enabled: 1
+    m_EditorHideFlags: 0
+    m_Script: {fileID: 11500000, guid: 744a208c85da6d04c861d81b992e4ead, type: 3}
+    m_Name:
+    m_EditorClassIdentifier:
+    CollisionTag:
+    Emitters: []
+    TriggerEvent: 0
+--- !u!111 &946716311086704240
+Animation:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1253632515393646}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 744a208c85da6d04c861d81b992e4ead, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Emitters: []
-  TriggerEvent: 0
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: 6c836aa4bf416704aa07f97e60b4f98a, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &4848056033909071894
 GameObject:
   m_ObjectHideFlags: 0

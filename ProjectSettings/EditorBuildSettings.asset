@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Prefabs/startScreen.unity
     guid: 2a9176622ed39d1a59875c6a07e9766a
+  - enabled: 1
+    path: Assets/Scenes/game.unity
+    guid: e84d80711cef60d51a10f599a9876f69
   m_configObjects: {}
